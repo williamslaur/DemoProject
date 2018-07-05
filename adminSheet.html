@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Admin Cheat Sheet</title>
+<link href="styles/adminSheet.css" rel="stylesheet" type="text/css" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="scripts/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+    <header class="header">
+        <div class="row">
+            <h1 class="indexTitle">The Easy Secret Pal Platform</h1>
+            
+            <div class="indexText">
+                <p>This platform provides an easy way to manage a Secret Pal group and provide participants with
+                    online access to their Secret Pal's preferences and special day information.  If you want to 
+                    create a new Secret Pal group, enter your email address in the Step 1 and then continue.  If 
+                    you entered you admin email address on the front page, you should see all your groups and 
+                    completed steps below. </p>
+            </div>
+        </div>
+    </header>
+    </div>
+
+<main class="container">
+        <ul class="nav nav-tabs">
+                <li class="active"><a href="#">Admin Home</a></li>
+                <li><a href="#step2">Table Views</a></li>
+                <li><a href="#step3">Rules</a></li>
+                <li><a href="#step4">User Page</a></li>
+                <li><a href="#step5">Matched user data</a></li>
+              </ul>
+
+    <div class="container">
+        <h3>Welcome to the Admin's Cheat Sheet</h3>
+        <p>Congratulations on volunteering (or being volunteered) to the Secret Pal Administrator.  
+                This website is designed to make your life a little easier by making sending out notifications, 
+                matching users and managing the preference forms. </p>
+        <p>The Admin Cheat Sheet provides step by step instructions at a high level of things you should do. Open up 
+          each accordian below and follow the instructions and you will be done in record time. </p>
+        <p>Secret Pal users will be returned to this site, but have their own pages which only allows them to either 
+            agree or decline becoming a secret pal, confirm they agree to the rules, and complete their own preference
+            survey form.  Once matched with another Secret Pal, then they will see their matches' survey answers. </p>
+        
+       
+        <button class="accordion">Step 1 - Designate the Administrators</button>
+        <div class="panel">
+                <h3>Designate the Administrators</h3>
+                   
+                    <p>You need to assign yourself and one to two other people who can be administrators.  The administrator 
+                        is allowed to see all the information for secret pals, including matched users, and all preference surveys.  
+                        This allows one or more people to assist with the Secret Pal duties in case you cannot complete these duties. </p>
+                    <p>If you have more than one group to manage, enter a group name, and then enter all administrator's usernames 
+                        in the table below.</p>
+                        <table id="admintable" class="table table-bordered">
+                                <thead>
+                                        <tr>
+                                          <th>Group Name</th>
+                                          <th>Username</th>
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                        <tr>
+                                          <td>Secret Elves</td>
+                                          <td>john@example.com</td>
+                                        </tr>
+                                        <tr>
+                                          <td>Secret Elves</td>
+                                          <td>mary@example.com</td>
+                                        </tr>
+                                        <tr>
+                                          <td>Secret Elves</td>
+                                          <td>judy@example.com</td>
+                                        </tr>
+                                      </tbody>
+
+                        </table>
+                      
+                                <div id="firsttablediv">
+                                        <table id="firsttable" border="1">
+                                          <thead>
+                                            <th>Group Name</th>
+                                            <th colspan="3">Username</th>
+                                            <th colspan="2">
+                                              <button id="insertitem">New Item</button>
+                                            </th>
+                                          </thead>
+                                          <tbody id="insertfirsttable">
+                                          </tbody>
+                                        </table>
+                                      </div>
+                        
+                </div>
+            <button class="accordion">Section 2 - Create a Set of Rules</button>
+            <div class="panel">
+                 
+                    <h3>Create a Set of Rules</h3>
+                    <p>You will need to create a set of rules to provide each secret pal. This should include a reference
+                        to your company's harrasment and discrimination policies.  It should mention how often each secret pal 
+                        should participate and if there are any limitations to dollar value of gifts.  If needed, examples are 
+                        provided to help creating guidelines.</p>
+                        <form id="ruleForm">
+                            <label>Enter the rules in the text box below.</label>
+                            <input type="textarea" id="rules" placeholder="Enter Rules Here">
+                        </br>
+                        </form>
+                        <p>Choose from the rules below to help you create your rule instructions. </p>
+
+                  </div>
+                  <button class="accordion">Section 3 - Designate Users to be Secret Pals</button>
+                  <div class="panel">
+                  
+                    <h3>Designate Users to be Secret Pals</h3>
+                    <p>Enter the email address for each person you want to add to the secret pal group named above.  
+                         Click submit after each email entry to add their name to a table.</p>
+                    <p>If you have more than 20 people to include in your group, create a group name for smaller numbers of people.  
+                        If needed, enter a group name in the form below and click submit.</p>
+                        <form id="usersForm">
+                            <label>Enter the name of the small group.</label>
+                            <input type="text" id="groupName" placeholder="Secret Elves"> </br>
+
+                            <input type="email" id="palEmail" placeholder="Secret Pal email address"><input type="button" id="mainAdminSubmit">Submit</button></br>
+                            <label>Enter the email address for each person to be a part of the Secret Pal group.</label>
+                        </form>
+                        </br>
+                
+                </div>
+
+
+                <button class="accordion">Section 4 - Choose Preference Survey Questions</button>
+                <div class="panel"></div>
+                 
+                    <h3>Choose Preference Survey Questions</h3>
+                    <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                  </div>
+
+                  <div id="step5" class="tab-pane fade">
+                        <h3>Match Secret Pals</h3>
+                        <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                      </div>
+                </div>
+              </div>
+           
+                    
+                   
+        </div>
+    </div>     
+    
+
+</main>
+
+
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="scripts/main.js"></script>
+
+</body>
+</html>

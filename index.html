@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Sign In</title>
+<link href="styles/stylesheet.css" rel="stylesheet" type="text/css" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="scripts/main.js"></script>
+
+
+</head>
+<body>
+
+    <div class="container">
+        <header class="header">
+            
+            <h1 class="indexTitle">The Easy Secret Pal Platform</h1>
+            
+            <div class="indexText">
+                <p>This platform provides an easy way to manage a Secret Pal group and provide participants with
+                    online access to their Secret Pal's preferences and special day information.  If you are a first
+                    time visitor, click the browse button to view the admin cheat sheet page that contains all the 
+                    needed tools and instructions for easy set up. Otherwise, please sign in to continue. </p>
+            </div>
+            <div class="browse">                
+                <button id="browseButton" onclick="location.href='adminSheet.html'">Browse Admin Instructions to See How to 
+                    Easily Manage a Secret Pal Group</button>
+            </div>
+        </header>
+
+        <div class="contents">
+            <div class="container">
+                <div class="row">
+                    
+                    <div class="participant col-md-6">
+                        <h2>Participant Sign In Box</h2>
+                        <p>Please enter your email address in the participant box and click the submit button to 
+                            access your Secret Pal's preferences or your own.</p>
+                        
+                        <input type="email" id="participantEmail" placeholder="Enter Email Address">
+                    </div>
+                
+                    <div class="admin col-md-6">
+                        <h2>Administrator Sign In Box</h2>
+                        <p>Please enter your email address in the administrator box and click submit to access all user
+                            information and manage the Secret Pal group.</p>
+                            
+                        <input type="email" id="adminEmail" placeholder="Enter Email Address">
+                       
+                    </div>
+                    <div class="emailsend">
+                    <button type="button" id="emailSubmit">Submit</button>
+                    <p>Enter a valid email in only one box before clicking submit.  An address must contain an @ and . to be valid. </p>
+                </div>
+
+                </div>
+            </div>
+                <div class="footer">
+                <nav class="navbar">
+                    <div class="container-fluid">
+                        <ul class="nav navbar-nav">
+                        <li class="active"><a href="aboutMe.html">About the Creator</a></li>
+                        <li><a href="#">Send Comments/Suggestions to Creator</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</body>
+</html>
