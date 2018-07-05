@@ -1,0 +1,155 @@
+body{
+    background-color:aqua;
+    max-width: 1120px;
+    height: 100%;
+    margin: 0;
+ }
+ html {
+  height: 100%;
+  margin: 0;
+}
+ 
+ header{
+     font-weight: bold;
+     max-width: 100%;
+     height: 50%;
+     background-color:#dee2f7;
+     background-image: url("../images/shining-3182654_1920.png");
+     background-repeat: repeat-y;
+     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+ }
+ 
+ .indexTitle {
+   text-align: center;
+   padding: 30px;
+   font-size: 60px;
+   color: #fbff00;
+   text-shadow: 5px 5px rgb(155, 160, 109);
+   }
+
+.indexText {
+  background-color:rgb(249, 177, 236, 0.5);
+  margin: 30px;
+}
+
+.browse {
+  text-align: center;
+}
+#browseButton {
+background-color: #fbff00;
+margin: 10px;
+max-width: 75%;
+}
+
+.contents {
+  background-color: aqua;
+}
+.participant, .admin {
+  border: 2px solid #31B404;
+  margin: 10px;
+  padding: 10px;
+  max-width: 45%;
+  background-color:rgb(249, 177, 236, 0.5);
+  margin-top: 20px;
+}
+
+h2 {
+  text-align: center;
+  color: #fbff00;
+}
+
+.footer {
+  padding: 1rem;
+  background-color: #7bf7af;
+  text-align: center;
+}
+
+
+ main{
+     max-width: 100%;
+     background-color: rgb(250, 236, 218);
+     
+ }
+ 
+/* Style tab links */
+.tablink {
+    background-color: #555;
+    color: white;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
+    width: 25%;
+  }
+  
+  .tablink:hover {
+    background-color: #777;
+  }
+  
+  /* Style the tab content (and add height:100% for full page content) */
+  .tabcontent {
+    color: white;
+    display: none;
+    padding: 100px 20px;
+    height: 100%;
+    max-width: 100%;
+  }
+  
+  #step1 {background-color: rgb(245, 212, 212);}
+  #step2 {background-color: rgb(207, 248, 207);}
+  #step3 {background-color: rgb(208, 208, 247);}
+  #step4 {background-color: rgb(169, 238, 250);}
+
+  /* Style the accordian */
+
+  .accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+}
+
+.active, .accordion:hover {
+    background-color: #ccc; 
+}
+
+.panel {
+    padding: 0 18px;
+    display: none;
+    background-color: white;
+    overflow: hidden;
+}
+
+/* styles for the admintable  */
+
+table {
+  border-spacing: 1px;
+  width: 100%;
+}
+th {
+  padding: 1px;
+}
+#firsttablediv {
+  width: 100%;
+}
+#firsttable {
+  color: white;
+  background-color: green;
+}
+#insertitem {
+  width: 100%;
+  padding: 2px;
+  font-size: 20px;
+  cursor: pointer;
+}
+#insertfirsttable > tr {
+  background-color: #31B404;
+}

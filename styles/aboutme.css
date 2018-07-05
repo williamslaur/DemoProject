@@ -1,0 +1,60 @@
+
+body{
+    background-color: #3c6760;
+    max-width: 1120px;
+    height: 100%;
+    margin: 0;
+ }
+ html {
+    height: 100%;
+    margin: 0;
+}
+
+.bg {
+    /* The image used */
+    background-image: url("../images/globeimage.jpeg");
+
+    /* Full height */
+    height: 50%; 
+
+    /* Center and scale the image  */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    /*  font info */
+    color: white;
+           
+}
+ 
+.bottom-text {
+    padding-left: 10px;
+}
+  
+.nav-item {
+    color: black;
+    font-weight: bold;
+}
+ 
+ul {
+    background-color: #ecc693;
+}
+
+.tab-content {
+    background-color: #3c6760;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+ 
+.card-header {
+    background-color: #d6db90;
+}
+
+.card-text {
+    margin: 5px;
+    text-align: center;
+    background-color: white;
+}
+.card-text2 {
+    background-color: white;
+}
