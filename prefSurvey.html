@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script>src="scripts/main.js" </script>
+enter viewpoint header
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+<title>Preference Survey</title>
+</head>
+
+<body>
+    <header>
+
+    </header>
+
+<p>Please complete this survey carefully so your secret pal knows what you like and you avoid gifts you don't.  
+    It is not necessary to complete all fields.  You can make edits to this form after it is submitted.</p>
+
+<section>
+    <form id="myform">
+
+   <div><h3>Sign in and agree to Rules</h3>
+    <div class="form-group">
+        <label>Enter your email address as username</label>
+        <input type="email" id="username" placeholder="Input Username" class="form-control">
+        <label>Enter the Group Name assigned to you from the Administrator</label>
+        <input type="text" id="groupName" placeholder="Input Group name" class="form-control">
+        </br>
+      
+        <label> Check here to verify you have reviewed the rules for giving and receiving gifts.</label>
+        <input type="checkbox" id="readRules" required>
+    </div>
+</div>
+
+<div><h3>Personal Information</h3>
+<div class="form-group">
+        <div class="form-row">
+            <div class="col">
+                <label>My birthday is: </label>
+                <input type="date" id="bdayDate" class="form-control">
+                <label>My marriage anniversary is:  </label>
+                <input type="date" id="annDate" class="form-control">
+                <label>My work anniversiary is:  </label>
+                <input type="date" id="wkAnnDate" class="form-control">
+                </div>
+                <div class="col">
+                <label>Something I like to do with my family is:  </label>
+                <input type="text" id="familyTime" class="form-control">
+                <label>I have the following pets:</label>
+                <input type="text" id="pets" class="form-control">  
+                <label>I like to shop at the following stores: </label>
+                <input type="text" id="stores" class="form-control"> 
+            </div>
+            <div class="col">
+                <label>I like to collect: </label>
+                <input type="text" id="collect" class="form-control">
+                <label>What person (dead/alive) would you like to meet: </label>
+                <input type="text" id="personMeet" class="form-control">
+            </div>
+        </div>
+        </div>
+</div>
+
+<div> <h3>My Favorite Things</h3>
+<div class="form-group">
+    <label>My favorite kind of candy/sweet/finger food is: </label>
+    <input type="text" id="sweets" class="form-control">
+    <label>My favorite crafts or hobbies are : </label>
+    <input type="text" id="hobby" class="form-control">
+    <label>My favorite color is:  </label>
+    <input type="text" id="color" class="form-control">
+    <label>My favorite books/authors are: </label> 
+    <input type="text" id="bookAuthor" class="form-control">
+    <label>My favorite poems/poets are: </label>
+    <input type="text" id="poemPoet" class="form-control">
+    <label>My favorite place to vacation is: </label>
+    <input type="text" id="vacation" class="form-control">
+    <label>My favorite holiday is: </label>
+    <input type="text" id="favoriteHoliday" class="form-control">
+    <label>My favorite TV show/movie is:  </label>
+    <input type="text" id="showMovie" class="form-control">
+    <label>My favorite music/musical artist is:  </label>
+    <input type="text" id="musicArtist" class="form-control">
+    <label>My favorite sports team/athlete is: </label>
+    <input type="text" id="teamAthlete" class="form-control">
+    <label>My favorite time of the year: </label>
+    <input type="text" id="season" class="form-control">
+    <label>My favorite restauraunts are:</label>
+    <input type="text" id="restaurants" class="form-control">
+    <label>My favorite drink is: </label>
+    <input type="text" id="drink" class="form-control">
+    <label>My favorite food is: </label>
+    <input type="text" id="food" class="form-control">
+</div>
+</div>
+
+<div><h3>Things to Avoid</h3>
+<div class="form-group">
+    <label>I have allergies/diabetes/medical issues, so I don't want anything with this in it: </label>
+    <input type="text" id="noItem" class="form-control">
+    <label>I don't like the following foods or drinks: </label>
+    <input type="text" id="noFoodDrink" class="form-control">
+    <label>I can't stand to listen to or read the following:</label>
+    <input type="text" id="noMedia" class="form-control">
+    <label>I'm not interested in getting more of the following (Ex.coffe cups, magnets, ornaments, etc.): </label> 
+    <input type="text" id="noTrinkets" class="form-control">
+</div>
+</div>
+
+<div class="holidays">
+<h3>These are the holidays that I like to celebrate: </h3>
+<div class="form-group"> 
+<div>Standard US Holidays</div>
+<div>Jewish Holidays</div>
+<div>Muslim Holidays</div>
+<div>Pagan Holidays</div>
+</div>
+</div>
+
+<div>
+    <button input type="submit" id="Submit">Submit</button>
+</div>
+</form>
+</section>
+</body>
+
+</html> 
