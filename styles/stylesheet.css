@@ -37,6 +37,7 @@ body{
 }
 #browseButton {
 background-color: #fbff00;
+border-radius: 20px;
 margin: 10px;
 max-width: 75%;
 }
@@ -46,6 +47,7 @@ max-width: 75%;
 }
 .participant, .admin {
   border: 2px solid #31B404;
+  border-radius: 20px;
   margin: 10px;
   padding: 10px;
   max-width: 45%;
@@ -61,7 +63,6 @@ h2 {
 input {
 width: 75%;
 text-align: center;
-
 }
 
 .footer {
@@ -73,8 +74,12 @@ text-align: center;
 #emailSubmit {
   margin: 30px;
   background-color: #fbff00;
-  
+  border-radius: 20px;
 }
 .emailsend {
   text-align: center;
+}
+
+.inputFields {
+  margin: auto;
 }
