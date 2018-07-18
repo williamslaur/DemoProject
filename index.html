@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 
 <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
@@ -29,8 +30,8 @@
                     needed tools and instructions for easy set up. Otherwise, please sign in to continue. </p>
             </div>
             <div class="browse">                
-                <button id="browseButton" onclick="location.href='adminSheet.html'">Browse Admin Instructions to See How to 
-                    Easily Manage a Secret Pal Group</button>
+                <button id="browseButton"><a href="adminSheet.html">Browse Admin Instructions to See How to 
+                    Easily Manage a Secret Pal Group</a></button>
             </div>
         </header>
 
@@ -42,28 +43,30 @@
                         <h2>Participant Sign In Box</h2>
                         <p>Please enter your email address in the participant box and click the submit button to 
                             access your Secret Pal's preferences or your own.</p>
-                            <div class="inputFields">
-                        <input type="text" id="groupName" placeholder="Enter Group Name">
-                        <input type="email" id="participantEmail" placeholder="Enter Email Address">
-                    </div>
+                        <div class="inputFields row container-fluid">
+                            <input type="text" id="groupName" placeholder="Enter Group Name">
+                            <input type="email" id="participantEmail" placeholder="Enter Email Address">
+                            <button type="submit" id="partSubmit">Submit</button>
+                        </div>
                     </div>
                 
                     <div class="admin col-md-6">
                         <h2>Administrator Sign In Box</h2>
                         <p>Please enter your email address in the administrator box and click submit to access all user
                             information and manage the Secret Pal group.</p>
-                        <div class="inputFields">
-                        <input type="text" id="groupName" placeholder="Enter Group Name">    
-                        <input type="email" id="adminEmail" placeholder="Enter Email Address">
+                        <div class="inputFields row container-fluid">
+                            <input type="text" id="groupName" placeholder="Enter Group Name">    
+                            <input type="email" id="adminEmail" placeholder="Enter Email Address">
+                            <button type="submit" id="adminSubmit">Submit</button>
+                        </div>
                     </div>
                 </div>
-                    </div>
 
                     <div class="row">
-                    <div class="emailsend">
-                    <button type="button" id="emailSubmit">Submit</button>
-                    <p>Enter a valid email in only one box before clicking submit.  An address must contain an @ and . to be valid. </p>
-                </div></div>
+                        <div class="emailsend">
+                        <p>Enter a valid email in only one box before clicking submit.  An address must contain an @ and . to be valid. </p>
+                        </div>
+                    </div>
 
                 </div>
             </div>

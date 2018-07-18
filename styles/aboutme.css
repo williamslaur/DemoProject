@@ -29,15 +29,21 @@ body{
  
 .bottom-text {
     padding-left: 10px;
+    font-size: 48px;
+    font-weight: bold;
 }
   
 .nav-item {
     color: black;
     font-weight: bold;
+    border: 4px sienna ridge;
+    background-image: url("../images/paper-1074131_1280.jpg");
 }
  
+
 ul {
     background-color: #ecc693;
+   
 }
 
 .tab-content {
@@ -46,15 +52,39 @@ ul {
     padding-bottom: 10px;
 }
  
-.card-header {
-    background-color: #d6db90;
+div .card {
+    background-color: #3c6760;
 }
 
-.card-text {
-    margin: 5px;
+div .card-header {
+    background-color: #c7ca93;
+        
+}
+
+div .card-text  {
+    margin: 1px;
     text-align: center;
     background-color: white;
+    background-image: url("../images/paper-1074131_1280.jpg");
+    min-height: 150px;
+    font-weight: bold;
+    padding: 5px;
+    
 }
-.card-text2 {
-    background-color: white;
+
+.card-title {
+    background-color: #7fd1c3;
+    padding: 2px;
+}
+
+.text-left, h5 {
+    background-image: url("../images/paper-1074131_1280.jpg");
+    
+}
+
+.card-body {
+    margin-bottom: 2px;
+    background-image: url("../images/paper-1074131_1280.jpg");
+    padding-right: 10px;
+    padding-left: 10px;
 }

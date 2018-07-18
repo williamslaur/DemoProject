@@ -71,15 +71,18 @@ text-align: center;
   text-align: center;
 }
 
-#emailSubmit {
+#partSubmit, #adminSubmit {
   margin: 30px;
   background-color: #fbff00;
   border-radius: 20px;
-}
-.emailsend {
-  text-align: center;
+  width: 100px;
 }
 
-.inputFields {
+div .emailsend {
+  text-align: center;
+  justify-content: center;
+}
+
+row .inputFields {
   margin: auto;
 }
