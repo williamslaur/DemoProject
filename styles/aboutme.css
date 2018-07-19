@@ -41,10 +41,6 @@ body{
 }
  
 
-ul {
-    background-color: #ecc693;
-   
-}
 
 .tab-content {
     background-color: #3c6760;
@@ -64,7 +60,6 @@ div .card-header {
 div .card-text  {
     margin: 1px;
     text-align: center;
-    background-color: white;
     background-image: url("../images/paper-1074131_1280.jpg");
     min-height: 150px;
     font-weight: bold;
@@ -87,4 +82,13 @@ div .card-text  {
     background-image: url("../images/paper-1074131_1280.jpg");
     padding-right: 10px;
     padding-left: 10px;
+}
+
+.active {
+    background-color: #ecc693;
+}
+.footer {
+    color: white;
+    margin: 10px;
+    font-size: x-small;
 }

@@ -1,48 +1,111 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<script>src="main.js" </script>
+    <link href="styles/stylesheet.css" rel="stylesheet" type="text/css" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="scripts/main.js"></script>
+   
 <title>Tables for Input Data</title>
+
 </head>
 
 <body>
+
+    <div class="header container-fluid">
+        <div class="row">
+             <div class="card">
+               <h1 class="indexTitle card-title">The Easy Secret Pal Platform</h1>
+               <div class="indexText card-text">
+                   <p>This platform provides an easy way to manage a Secret Pal group and provide participants with
+                       online access to their Secret Pal's preferences and special day information.  If you want to 
+                       create a new Secret Pal group, follow the instructions for Step 1 and then continue with the 
+                       remaining steps.  If you entered your admin email address and group on the front page, you should 
+                       see see you have access to all tables and see the status of the participants. </p>
+               </div>
+             </div>
+           </div>
+     </div>
+   
 <header>
     Tables for Administrators and Users
 </header>
 <section>
+  <p>
+    <h5>Group Name Table</h5>
+  </p>
+  <div>
+    <form id="Save Group Name">
+      <input type="text" id="grpNameInput" name="grpNameInput" />
+    </form>
+  </div>
+
+  </section>
+
+  <section>
     <p>
-        Adminitrator's Table
+        <h5>Administrator's Table</h5>
+    </p>
+    <p>
+      Enter your email address and the address of one to two assistants who will assist with management of the group.
     </p>
 
     <div>
-        <table id="adminTable">
-            <tr>
-                <th>Username</th>
-            </tr>
-            <tr>
-                <td></td>
-            </tr>
-         </table>
+            <form id=frm1Lines>
+                    <table id=adminTabLines>
+                    <tr>
+                      <th></th>
+                      <th>Admin Email Address</th>
+                      <tr>
+                      <td><img src='./images/redMinus.png' id="minus1" /></td>
+                      <td><input type='text' name='adminEmailInput' /></td>
+                    </tr>
+                    <tr>
+                      <td><img src='./images/redPlus.png' id="plus1" /></td>
+                      <td colspan=1>&nbsp;</td>
+                    </tr>
+                    </table>
+                  </form>
     </div>
 </section>
 
 <section>
     <p>
-        Secret Pal User's Table
+        <h5>Secret Pal User's Table</h5>
+    </p>
+    <p>
+      Enter the email addresses of every one who wishes to participate.  Once they get their invitation 
+      and agree to terms and complete the survey, then you will be able to perform the matching process. 
     </p>
     <div>
-        <table id="userTable">
-            <tr>
-                <th>Position</th>
-                <th>Username</th>
-                <th>Participate</th>
-                <th>EmailSent</th>
-                <th>Accept Rules</th>
-                <th>Matched Username</th>
-            </tr>
-        </table>
+            <form id=frm2Lines>
+                    <table id=partTabLines>
+                    <tr>
+                      <th></th>
+                      <th>Participant's Email Address</th>
+                      <th>Terms Agreement</th>
+                      <th>Survey Complete</th>
+                      <th>Matched Secret Pal</th>
+                      <tr>
+                      <td><img src='./images/redMinus.png' id="minus2" onclick='removeLine2(this);'/></td>
+                      <td><input type='email' name='partEmailInput' /></td>
+                      <td><input type='text' name='termsInput' /></td>
+                      <td><input type='text' name='surveyInput' /></td>
+                      <td><input type='email' name='matchedPal' /></td>
+                    </tr>
+                    <tr>
+                      <td><img src='./images/redPlus.png' id="plus2" onclick='addLine2();' /></td>
+                      <td colspan=5>&nbsp;</td>
+                    </tr>
+                    </table>
+                  </form>
     </div>
 </section>
 
