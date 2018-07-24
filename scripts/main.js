@@ -24,13 +24,18 @@ document.getElementById("adminSubmit").addEventListener("click", compareAdminFor
 
 function comparePartForm() { 
 
+  debugger;
   var partGrpVal = document.forms["partInputFields"]["partGrpName"].value;
   var partEmVal = document.forms["partInputFields"]["partEmail"].value;
   
   var partGrpValstr = partGrpVal.toLowerCase();
   var partEmValstr = partEmVal.toLowerCase();
 
-  var partArray = partGrpValstr + "part";
+  const partArray = partGrpValstr + "part";
+
+  //check if the new const will be found as an array
+
+  array.isarray(partArray);
 
   //go to object and find participantEmail
 
@@ -39,13 +44,13 @@ function comparePartForm() {
     return pal.participantEmail === (partEmValstr);
     
   }
-  debugger;
+  
 
 //how do I get this to realize that myArray is the same as the Santapart array listed above when I use Santa as group name?
 
   var found = partArray.find(checkPartEmail);
 
-  
+
   //convert to object to JSON string - is this needed?
 
   var myJSON = JSON.stringify(found);
@@ -59,7 +64,7 @@ function comparePartForm() {
     'Content-type': 'application/json'
   },
   method: 'POST',
-  body: { groupName: 'xstr', participantEmail: 'ystr' },
+  body: found,
 
   });
 
@@ -67,8 +72,6 @@ function comparePartForm() {
 
   window.location.assign("file:///C:/Users/Laura/DemoProject/participant.html")
       
-  }; else {
-    alert("User is not found.  Ask your administrator to verify your Group Name and Email.");
   };
 
 
@@ -84,7 +87,7 @@ function compareAdminForm() {
   var xstr = x.toLowerCase();
   var ystr = y.toLowerCase();
 
-  var myArray = xstr + "admin";
+  const myArray = xstr + "admin";
 
 
 //go to object and find adminEmail
@@ -120,12 +123,8 @@ var myJSON = JSON.stringify(found);
 
   window.location.assign("file:///C:/Users/Laura/DemoProject/adminSheet.html")
       
-  }; else {
-    alert("User is not found.  Check your Group Name and Email, or begin creating a new group.");
-  };
+  }; 
 
-
-}
 });
 
 // array objects to represent data in a back end
