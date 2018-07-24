@@ -1,12 +1,19 @@
 $(document).ready(function(){
 
+    //obtain group name from index.html 
+
+    // from index.html
+    document.getElementById("write").innerHTML = window.location.search; // you will have to parse
+    // the query string to extract the
+    // parameter you need
+
 
     // functions to add or subtract lines from admin input tables  
 
     $(plus1).click(function addLine1() {
         var tabLines = document.getElementById("adminTabLines");
         var tabLinesRow = tabLines.insertRow(tabLines.rows.length-1);
-        var col1html = "<img src='./images/redMinus.png' onclick='removeLine1(this);'>";
+        var col1html = "<img src='./images/redMinus.png' id='minus1' />";
         var col2html = "<input type='email' name='adminEmailInput' />";
               
         var col1 = tabLinesRow.insertCell(0); col1.innerHTML=col1html;
@@ -23,7 +30,7 @@ $(document).ready(function(){
     $(plus2).click(function addLine2() {
         var tabLines = document.getElementById("partTabLines");
         var tabLinesRow = tabLines.insertRow(tabLines.rows.length-1);
-        var col1html = "<img src='./images/redMinus.png' onclick='removeLine2(this);'>";
+        var col1html = "<img src='./images/redMinus.png' id='minus2' />";
         var col2html = "<input type='email' name='partEmailInput' />";
         var col3html = "<input type='text' name='termsInput' />";
         var col4html = "<input type='text' name='surveyInput' />";

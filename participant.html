@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Participant Data</title>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="styles/partSheet.css" rel="stylesheet" type="text/css" />
+
+<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<script src="scripts/partSignIn.js"></script>
+
+</head>
+
+<body>
+
+    <div class="header container-fluid">
+        <h1 class="indexTitle card-title">The Easy Secret Pal Platform</h1>
+        <div class="indexText card-text">
+            <p>This platform provides an easy way to manage a Secret Pal group and provide participants with
+                online access to their Secret Pal's preferences and special day information.  You may want to 
+            save this page as a favorite to view your Secret Pal's survey. </p>
+        </div>
+    </div>
+
+    <div class="contents container-fluid">
+
+        <nav class="nav nav-pills partNavbar">
+                <a href="./index.html" class="nav-link nav-item">Home-Sign In</a>
+                <a href="./participant.html" class="nav-link nav-item active">Survey Information</a>
+        </nav>
+        
+          
+        <div class="surveys">
+            <h2>Welcome to Your Page</h2> 
+     
+            <p class="text ">This page lets you see your Secret Pal's Information and the ability to see your survey information.
+            Click on the appropriate tab below to view the saved data.  If you wish to change your secret pal
+            information, click on the Change Data button.
+            </p>
+            <div class="tabSection">
+                <nav>
+                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                        <a class="nav-item nav-link active" id="nav-pal-tab" data-toggle="tab" href="#nav-pal" role="tab" aria-controls="nav-pal" aria-selected="true">Secret Pal's Profile</a>
+                        <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">My Profile</a>
+                    </div>
+                </nav>
+
+                <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="nav-pal" role="tabpanel" aria-labelledby="nav-pal-tab">
+                        <p>My secret pal email is <p id=matchUser></p>. </p>
+                        <form id="palProfile" action="" method="GET">
+                                <div><h5>Personal Information</h5>
+                                    <div class="form-row mx-3">
+                                        <div class="form-group col">
+                                            <label for="bdayDate">My birthday is:</label>
+                                            <input type="date" id="bdayDate" class="form-control">
+                                        </div>
+                                        <div class="form-group col">
+                                            <label for="annDate">My marriage anniversary is:</label>
+                                            <input type="date" id="annDate" class="form-control">
+                                        </div>
+                                        <div class="form-group col">
+                                            <label for="wkAnnDate">My work anniversary is:</label>
+                                            <input type="date" id="wkAnnDate" class="form-control" >
+                                        </div>
+                                    </div>
+                                    <div class="form-group col">
+                                        <label for="familyTime" class=" ">Something I like to do with my family is:  </label>
+                                        <input type="text" id="familyTime" class="form-control" placeholder="Something I like to do with my family is">
+                                        <label for="pets" class=" ">I have the following pets:</label>
+                                        <input type="text" id="pets" class="form-control" placeholder="I have the following pets">  
+                                        <label for="stores" class=" ">I like to shop at the following stores: </label>
+                                        <input type="text" id="stores" class="form-control" placeholder="I like to shop at the following stores"> 
+                                        <label for="collect" class=" ">I like to collect: </label>
+                                        <input type="text" id="collect" class="form-control" placeholder="I like to collect">
+                                        <label for="personMeet" class=" ">What person (dead/alive) would you like to meet: </label>
+                                        <input type="text" id="personMeet" class="form-control" placeholder="What person (dead/alive) would you like to meet">
+                                    </div>
+                                </div>
+                                    
+            
+                                <div> <h5>My Favorite Things</h5>
+                                    <div class="form-group col">
+                                        <label for="sweets" class=" ">My favorite kind of candy/sweet/finger food is:</label>
+                                        <input type="text" id="sweets" class="form-control" placeholder="My favorite kind of candy/sweet/finger food is">
+                                        <label for="food" class=" ">My favorite food is: </label>
+                                        <input type="text" id="food" class="form-control" placeholder="My favorite food is">
+                                        <label for="drink" class=" ">My favorite drink is: </label>
+                                        <input type="text" id="drink" class="form-control" placeholder="My favorite drink is">
+                                        <label for="hobby" class=" ">My favorite crafts or hobbies are : </label>
+                                        <input type="text" id="hobby" class="form-control" placeholder="My favorite crafts or hobbies are">
+                                        <label for="color" class=" ">My favorite color is:  </label>
+                                        <input type="text" id="color" class="form-control" placeholder="My favorite color is">
+                                        <label for="bookAuthor" class=" ">My favorite books/authors are: </label> 
+                                        <input type="text" id="bookAuthor" class="form-control" placeholder="My favorite books/authors are">
+                                        <label for="poemPoet" class=" ">My favorite poems/poets are: </label>
+                                        <input type="text" id="poemPoet" class="form-control" placeholder="My favorite poems/poets are">
+                                        <label for="vacation" class=" ">My favorite place to vacation is: </label>
+                                        <input type="text" id="vacation" class="form-control" placeholder="My favorite place to vacation is">
+                                        <label for="favoriteHoliday" class=" ">My favorite holiday is: </label>
+                                        <input type="text" id="favoriteHoliday" class="form-control" placeholder="My favorite holiday is">
+                                        <label for="showMovie" class=" ">My favorite TV show/movie is:  </label>
+                                        <input type="text" id="showMovie" class="form-control" placeholder="My favorite TV show/movie is">
+                                        <label for="musicArtist" class=" ">My favorite music/musical artist is:  </label>
+                                        <input type="text" id="musicArtist" class="form-control" placeholder="My favorite music/musical artist is">
+                                        <label for="teamAthlete" class=" ">My favorite sports team/athlete is: </label>
+                                        <input type="text" id="teamAthlete" class="form-control" placeholder="My favorite sports team/athlete is">
+                                        <label for="season" class=" ">My favorite time of the year: </label>
+                                        <input type="text" id="season" class="form-control" placeholder="My favorite time of the year">
+                                        <label for="restaurants" class=" ">My favorite restauraunts are:</label>
+                                        <input type="text" id="restaurants" class="form-control" placeholder="My favorite restauraunts are">
+                                    </div>
+                                </div>
+                                    
+                                <div><h5>Things to Avoid</h5>
+                                    <div class="form-group col">
+                                        <label for="noItem" class=" ">I have allergies/diabetes/medical issues, so I don't want anything with this in it: </label>
+                                        <input type="text" id="noItem" class="form-control" placeholder="I have allergies/diabetes/medical issues, so I don't want anything with this in it">
+                                        <label for="noFoodDrink" class=" ">I don't like the following foods or drinks: </label>
+                                        <input type="text" id="noFoodDrink" class="form-control" placeholder="I don't like the following foods or drinks">
+                                        <label for="noMedia" class=" ">I can't stand to listen to or read the following:</label>
+                                        <input type="text" id="noMedia" class="form-control" placeholder="I can't stand to listen to or read the following">
+                                        <label for="noTrinkets" class=" ">I'm not interested in getting more of the following (Ex.coffe cups, magnets, ornaments, etc.): </label> 
+                                        <input type="text" id="noTrinkets" class="form-control" placeholder="I'm not interested in getting more of the following (Ex.coffe cups, magnets, ornaments, etc.)">
+                                    </div>
+                                </div> 
+                            </form>
+                        </p>
+
+                    </div>
+                    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                            <p>These are my answers to the survey questions. </p>
+                            <form id="myProfile" action="" method="GET">
+                                    <div><h5>Personal Information</h5>
+                                        <div class="form-row mx-3">
+                                            <div class="form-group col">
+                                                <label for="bdayDate">My birthday is:</label>
+                                                <input type="date" id="bdayDate" class="form-control">
+                                            </div>
+                                            <div class="form-group col">
+                                                <label for="annDate">My marriage anniversary is:</label>
+                                                <input type="date" id="annDate" class="form-control">
+                                            </div>
+                                            <div class="form-group col">
+                                                <label for="wkAnnDate">My work anniversary is:</label>
+                                                <input type="date" id="wkAnnDate" class="form-control" >
+                                            </div>
+                                        </div>
+                                        <div class="form-group col">
+                                            <label for="familyTime" class=" ">Something I like to do with my family is:  </label>
+                                            <input type="text" id="familyTime" class="form-control" placeholder="Something I like to do with my family is">
+                                            <label for="pets" class=" ">I have the following pets:</label>
+                                            <input type="text" id="pets" class="form-control" placeholder="I have the following pets">  
+                                            <label for="stores" class=" ">I like to shop at the following stores: </label>
+                                            <input type="text" id="stores" class="form-control" placeholder="I like to shop at the following stores"> 
+                                            <label for="collect" class=" ">I like to collect: </label>
+                                            <input type="text" id="collect" class="form-control" placeholder="I like to collect">
+                                            <label for="personMeet" class=" ">What person (dead/alive) would you like to meet: </label>
+                                            <input type="text" id="personMeet" class="form-control" placeholder="What person (dead/alive) would you like to meet">
+                                        </div>
+                                    </div>
+                                        
+                
+                                    <div> <h5>My Favorite Things</h5>
+                                        <div class="form-group col">
+                                            <label for="sweets" class=" ">My favorite kind of candy/sweet/finger food is:</label>
+                                            <input type="text" id="sweets" class="form-control" placeholder="My favorite kind of candy/sweet/finger food is">
+                                            <label for="food" class=" ">My favorite food is: </label>
+                                            <input type="text" id="food" class="form-control" placeholder="My favorite food is">
+                                            <label for="drink" class=" ">My favorite drink is: </label>
+                                            <input type="text" id="drink" class="form-control" placeholder="My favorite drink is">
+                                            <label for="hobby" class=" ">My favorite crafts or hobbies are : </label>
+                                            <input type="text" id="hobby" class="form-control" placeholder="My favorite crafts or hobbies are">
+                                            <label for="color" class=" ">My favorite color is:  </label>
+                                            <input type="text" id="color" class="form-control" placeholder="My favorite color is">
+                                            <label for="bookAuthor" class=" ">My favorite books/authors are: </label> 
+                                            <input type="text" id="bookAuthor" class="form-control" placeholder="My favorite books/authors are">
+                                            <label for="poemPoet" class=" ">My favorite poems/poets are: </label>
+                                            <input type="text" id="poemPoet" class="form-control" placeholder="My favorite poems/poets are">
+                                            <label for="vacation" class=" ">My favorite place to vacation is: </label>
+                                            <input type="text" id="vacation" class="form-control" placeholder="My favorite place to vacation is">
+                                            <label for="favoriteHoliday" class=" ">My favorite holiday is: </label>
+                                            <input type="text" id="favoriteHoliday" class="form-control" placeholder="My favorite holiday is">
+                                            <label for="showMovie" class=" ">My favorite TV show/movie is:  </label>
+                                            <input type="text" id="showMovie" class="form-control" placeholder="My favorite TV show/movie is">
+                                            <label for="musicArtist" class=" ">My favorite music/musical artist is:  </label>
+                                            <input type="text" id="musicArtist" class="form-control" placeholder="My favorite music/musical artist is">
+                                            <label for="teamAthlete" class=" ">My favorite sports team/athlete is: </label>
+                                            <input type="text" id="teamAthlete" class="form-control" placeholder="My favorite sports team/athlete is">
+                                            <label for="season" class=" ">My favorite time of the year: </label>
+                                            <input type="text" id="season" class="form-control" placeholder="My favorite time of the year">
+                                            <label for="restaurants" class=" ">My favorite restauraunts are:</label>
+                                            <input type="text" id="restaurants" class="form-control" placeholder="My favorite restauraunts are">
+                                        </div>
+                                    </div>
+                                        
+                                    <div><h5>Things to Avoid</h5>
+                                        <div class="form-group col">
+                                            <label for="noItem" class=" ">I have allergies/diabetes/medical issues, so I don't want anything with this in it: </label>
+                                            <input type="text" id="noItem" class="form-control" placeholder="I have allergies/diabetes/medical issues, so I don't want anything with this in it">
+                                            <label for="noFoodDrink" class=" ">I don't like the following foods or drinks: </label>
+                                            <input type="text" id="noFoodDrink" class="form-control" placeholder="I don't like the following foods or drinks">
+                                            <label for="noMedia" class=" ">I can't stand to listen to or read the following:</label>
+                                            <input type="text" id="noMedia" class="form-control" placeholder="I can't stand to listen to or read the following">
+                                            <label for="noTrinkets" class=" ">I'm not interested in getting more of the following (Ex.coffe cups, magnets, ornaments, etc.): </label> 
+                                            <input type="text" id="noTrinkets" class="form-control" placeholder="I'm not interested in getting more of the following (Ex.coffe cups, magnets, ornaments, etc.)">
+                                        </div>
+                                    </div> 
+                                </form>
+                            </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+        <div class="footer">
+    
+            <div class="container-fluid">
+                <nav class="navbar">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="aboutMe.html">About the Creator</a></li>
+    <!--              <li><a href="#">Send Comments/Suggestions to Creator</a></li>  -->
+                    </ul>
+                </nav>
+                <p>Thank you to Pixabay for free images and backgrounds. <a href="https://pixabay.com/en/photos/" target="blank">Pixabay Website</a></p>
+            </div>
+        </div>
+
+
+             
+</body>
+</html>

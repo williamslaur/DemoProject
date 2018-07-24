@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Participant Data</title>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="styles/partSheet.css" rel="stylesheet" type="text/css" />
+
+<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script> -->
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<script src="scripts/partSignIn.js"></script>
+
+</head>
+
+<body>
+
+    <div class="header container-fluid">
+            <h1 class="indexTitle card-title">The Easy Secret Pal Platform</h1>
+            <div class="indexText card-text">
+                <p>This platform provides an easy way to manage a Secret Pal group and provide participants with
+                    online access to their Secret Pal's preferences and special day information.  </p>
+            </div>
+        </div>
+    
+        <div class="contents container-fluid">
+    
+            <nav class="nav nav-pills partNavbar">
+                    <a href="./index.html" class="nav-link nav-item">Home-Sign In</a>
+                    <a href="./participant.html" class="nav-link nav-item active">Survey Information</a>
+            </nav>
+            
+            <div class="container-fluid survey">
+                <h3>Thank you for considering joining a Secret Pal Group</h3>
+
+                <p>First things first - please enter the Group Name as provided from the Secret Pal Administrator in the
+                invitation and enter your username into the fields below.  (Please do so even if you don't want to 
+                participate, so you will not recieve further notifications or emails about upcoming fun activities.)</p>
+            
+                <form id="partConfirm" class="form-inline">
+                    <div class="form-group col">
+                        <label for="groupName" class="col-sm-2">Group Name</label>
+                        <input type="text" id="grpName" value="" name="groupName" class="form-control col-sm-3" placeholder="Group Name">
+                    </div>
+                    <div class="form-group col">   
+                        <label for="partEmail" class="col-sm-2">Email address</label>
+                        <input type="email" id="partEmail" value="" name="partEmail" class="form-control col-sm-5" placeholder="My Email Address">
+                    </div>
+                
+                </form>
+
+                <p>Please complete all questions on the survey below and agree to the terms/rules to participate as a Secret Pal.  
+                If you do not wish to participate, please click the No Thank You button below and the administrator will 
+                remove your information from the tables.  If you change your mind - they can add you back if you 
+                do it before the secret pal matches are made.</p>
+
+                <div class="noThankyou">
+                    <button class="noThanks" id="noThanks">No thank you.  I do not wish to participate.</button>
+                </div>
+            
+            <div class="card rules px-2"> 
+                <h4 class="card-title">Rules for Participating in Secret Pals</h4>
+                <p class="card-text">
+                    <ul>
+                        <li>Secret Pal Gifts should be in the value range of $5.00 to $20.00 depending on the reason for celebration. </li>
+                        <li>Secret Pal Gifts should be exchanged at least 3 times during the year.</li>
+                        <li>Secret Pals will be revealed at the Christmas party scheduled in December with the final gift 
+                            exchange at the Christmas party.</li> 
+                        <li>All gifts must be considered in good taste and comply with all the company's Harassment and Discrimination policies. </li>             
+                        <li>You must try to keep your identify a secret for the year until the reveal party.  Please don't tell others who
+                            their secret pal is and don't ask who is your secret pal.</li>
+                    </ul>
+                
+                <div class="agree">
+                    <button class="agreement" id="agreement">I agree to the Secret Pal Rules</button>
+                </div>
+            </p>
+                
+            </div>
+
+            <div class="card profile px-2">
+                <h4 class="card-title">Secret Pal Profile Questions</h4>
+                <p>It is not required to answer all questions.  However, it is recommended to complete the 
+                    Personal Information and Things to Avoid to identify special days and 
+                    avoid getting unwanted items.  <strong> You must click the submit button at the bottom to save your information.</strong>
+                </p>
+                <form id="profile" action="" method="POST">
+                    <div><h5>Personal Information</h5>
+                        <div class="form-row mx-3">
+                            <div class="form-group col">
+                                <label for="bdayDate">My birthday is:</label>
+                                <input type="date" id="bdayDate" class="form-control">
+                            </div>
+                            <div class="form-group col">
+                                <label for="annDate">My marriage anniversary is:</label>
+                                <input type="date" id="annDate" class="form-control">
+                            </div>
+                            <div class="form-group col">
+                                <label for="wkAnnDate">My work anniversary is:</label>
+                                <input type="date" id="wkAnnDate" class="form-control" >
+                            </div>
+                        </div>
+                        <div class="form-group col">
+                            <label for="familyTime" class="sr-only">Something I like to do with my family is:  </label>
+                            <input type="text" id="familyTime" class="form-control" placeholder="Something I like to do with my family is">
+                            <label for="pets" class="sr-only">I have the following pets:</label>
+                            <input type="text" id="pets" class="form-control" placeholder="I have the following pets">  
+                            <label for="stores" class="sr-only">I like to shop at the following stores: </label>
+                            <input type="text" id="stores" class="form-control" placeholder="I like to shop at the following stores"> 
+                            <label for="collect" class="sr-only">I like to collect: </label>
+                            <input type="text" id="collect" class="form-control" placeholder="I like to collect">
+                            <label for="personMeet" class="sr-only">What person (dead/alive) would you like to meet: </label>
+                            <input type="text" id="personMeet" class="form-control" placeholder="What person (dead/alive) would you like to meet">
+                        </div>
+                    </div>
+                        
+
+                    <div> <h5>My Favorite Things</h5>
+                        <div class="form-group col">
+                            <label for="sweets" class="sr-only">My favorite kind of candy/sweet/finger food is:</label>
+                            <input type="text" id="sweets" class="form-control" placeholder="My favorite kind of candy/sweet/finger food is">
+                            <label for="food" class="sr-only">My favorite food is: </label>
+                            <input type="text" id="food" class="form-control" placeholder="My favorite food is">
+                            <label for="drink" class="sr-only">My favorite drink is: </label>
+                            <input type="text" id="drink" class="form-control" placeholder="My favorite drink is">
+
+                            <label for="hobby" class="sr-only">My favorite crafts or hobbies are : </label>
+                            <input type="text" id="hobby" class="form-control" placeholder="My favorite crafts or hobbies are">
+                            <label for="color" class="sr-only">My favorite color is:  </label>
+                            <input type="text" id="color" class="form-control" placeholder="My favorite color is">
+                            <label for="bookAuthor" class="sr-only">My favorite books/authors are: </label> 
+                            <input type="text" id="bookAuthor" class="form-control" placeholder="My favorite books/authors are">
+                            <label for="poemPoet" class="sr-only">My favorite poems/poets are: </label>
+                            <input type="text" id="poemPoet" class="form-control" placeholder="My favorite poems/poets are">
+                            <label for="vacation" class="sr-only">My favorite place to vacation is: </label>
+                            <input type="text" id="vacation" class="form-control" placeholder="My favorite place to vacation is">
+                            <label for="favoriteHoliday" class="sr-only">My favorite holiday is: </label>
+                            <input type="text" id="favoriteHoliday" class="form-control" placeholder="My favorite holiday is">
+                            <label for="showMovie" class="sr-only">My favorite TV show/movie is:  </label>
+                            <input type="text" id="showMovie" class="form-control" placeholder="My favorite TV show/movie is">
+                            <label for="musicArtist" class="sr-only">My favorite music/musical artist is:  </label>
+                            <input type="text" id="musicArtist" class="form-control" placeholder="My favorite music/musical artist is">
+                            <label for="teamAthlete" class="sr-only">My favorite sports team/athlete is: </label>
+                            <input type="text" id="teamAthlete" class="form-control" placeholder="My favorite sports team/athlete is">
+                            <label for="season" class="sr-only">My favorite time of the year: </label>
+                            <input type="text" id="season" class="form-control" placeholder="My favorite time of the year">
+                            <label for="restaurants" class="sr-only">My favorite restauraunts are:</label>
+                            <input type="text" id="restaurants" class="form-control" placeholder="My favorite restauraunts are">
+                        </div>
+                    </div>
+                        
+                    <div><h5>Things to Avoid</h5>
+                        <div class="form-group col">
+                            <label for="noItem" class="sr-only">I have allergies/diabetes/medical issues, so I don't want anything with this in it: </label>
+                            <input type="text" id="noItem" class="form-control" placeholder="I have allergies/diabetes/medical issues, so I don't want anything with this in it">
+                            <label for="noFoodDrink" class="sr-only">I don't like the following foods or drinks: </label>
+                            <input type="text" id="noFoodDrink" class="form-control" placeholder="I don't like the following foods or drinks">
+                            <label for="noMedia" class="sr-only">I can't stand to listen to or read the following:</label>
+                            <input type="text" id="noMedia" class="form-control" placeholder="I can't stand to listen to or read the following">
+                            <label for="noTrinkets" class="sr-only">I'm not interested in getting more of the following (Ex.coffe cups, magnets, ornaments, etc.): </label> 
+                            <input type="text" id="noTrinkets" class="form-control" placeholder="I'm not interested in getting more of the following (Ex.coffe cups, magnets, ornaments, etc.)">
+                        </div>
+                    </div>
+                        
+                </form>
+            </div>
+              
+            <p>Please click the <strong>Save but not complete</strong> button below if you wish to complete later.  
+                Be sure to click the button for <strong>Save all Questions and Complete</strong> to submit your profile and be matched to a secret Pal.</p>
+
+            <div class="saveSection">
+                    <button class="saveProfile" id="saveProfile">Save but not complete.</button>
+                    <button class="completeProfile" id="completeProfile">Save all Questions and Complete</button>      
+            </div>
+
+    </div>
+    <div class="footer">
+    
+            <div class="container-fluid">
+                <nav class="navbar">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="aboutMe.html">About the Creator</a></li>
+    <!--              <li><a href="#">Send Comments/Suggestions to Creator</a></li>  -->
+                    </ul>
+                </nav>
+                <p>Thank you to Pixabay for free images and backgrounds. <a href="https://pixabay.com/en/photos/" target="blank">Pixabay Website</a></p>
+            </div>
+        </div>
+
+             
+</body>
+</html>

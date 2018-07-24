@@ -7,11 +7,14 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    
+
+  <!--  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script> -->
+       
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-    <script src="scripts/main.js"></script>
+    
+    <script src="scripts/tables.js"></script>
    
 <title>Tables for Input Data</title>
 
@@ -33,25 +36,39 @@
              </div>
            </div>
      </div>
-   
-<header>
-    Tables for Administrators and Users
-</header>
-<section>
+
+     <div class="contents container-fluid">
+
+     <nav class="nav nav-fill">
+        <a class="nav-item nav-link" href="./index.html">Sign In</a></li>
+        <a class="nav-item nav-link" href="./adminSheet.html">Admin Cheat Sheet</a></li>
+        <a class="nav-item nav-link active" href="./tables.html">Tables for Entry</a></li>
+<!--        <a class="nav-item nav-link" href="#">User Page</a></li>
+        <a class="nav-item nav-link" href="#">Matched user data</a></li> -->
+      </nav>
+
+
+    <header>
+        <h3>Tables for Administrators</h3>
+    </header>
   <p>
-    <h5>Group Name Table</h5>
+    <h4>Group Name Table</h4>
+  </p>
+  <p>
+    If you are starting a new group, enter information as described below.  If you are an admin of a group already, 
+    click the Retrieve Button to see all the data saved for that group. 
   </p>
   <div>
-    <form id="Save Group Name">
+    <form id="Group Name">
       <input type="text" id="grpNameInput" name="grpNameInput" />
-    </form>
+   
+    <button type="submit" id="retrieveGroup" name="retrieveGroup">Retrieve Group Details</button>
+  </form>
+
   </div>
 
-  </section>
-
-  <section>
-    <p>
-        <h5>Administrator's Table</h5>
+      <p>
+        <h4>Administrator's Table</h4>
     </p>
     <p>
       Enter your email address and the address of one to two assistants who will assist with management of the group.
@@ -74,11 +91,9 @@
                     </table>
                   </form>
     </div>
-</section>
 
-<section>
     <p>
-        <h5>Secret Pal User's Table</h5>
+        <h4>Secret Pal User's Table</h4>
     </p>
     <p>
       Enter the email addresses of every one who wishes to participate.  Once they get their invitation 
@@ -94,20 +109,38 @@
                       <th>Survey Complete</th>
                       <th>Matched Secret Pal</th>
                       <tr>
-                      <td><img src='./images/redMinus.png' id="minus2" onclick='removeLine2(this);'/></td>
+                      <td><img src='./images/redMinus.png' id="minus2" /></td>
                       <td><input type='email' name='partEmailInput' /></td>
                       <td><input type='text' name='termsInput' /></td>
                       <td><input type='text' name='surveyInput' /></td>
                       <td><input type='email' name='matchedPal' /></td>
                     </tr>
                     <tr>
-                      <td><img src='./images/redPlus.png' id="plus2" onclick='addLine2();' /></td>
+                      <td><img src='./images/redPlus.png' id="plus2" /></td>
                       <td colspan=5>&nbsp;</td>
                     </tr>
                     </table>
                   </form>
+
+          <button type="submit" class="saveData" id="saveData">Save Data</button>
     </div>
-</section>
+
+
+  </div>
+
+    <div class="footer">
+        
+        <div class="container-fluid">
+            <nav class="navbar">
+            <ul class="nav navbar-nav">
+            <li class="active"><a href="aboutMe.html">About the Creator</a></li>
+<!--                       <li><a href="#">Send Comments/Suggestions to Creator</a></li>  -->
+            </ul>
+            </nav>
+            <p>Thank you to Pixabay for free images and backgrounds. <a href="https://pixabay.com/en/photos/" target="blank">Pixabay Website</a></p>
+        </div>
+    </div>
+  
 
 
 </body>

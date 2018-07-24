@@ -7,13 +7,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="styles/adminSheet.css" rel="stylesheet" type="text/css" />
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 
 <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script> -->
+<script
+  src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+  integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+  crossorigin="anonymous"></script>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
 <script src="scripts/adminSheet.js"></script>
 
 </head>
@@ -21,96 +33,137 @@
 <body>
     
   <div class="header container-fluid">
-     <div class="row">
-          <div class="card">
-            <h1 class="indexTitle card-title">The Easy Secret Pal Platform</h1>
-            <div class="indexText card-text">
-                <p>This platform provides an easy way to manage a Secret Pal group and provide participants with
-                    online access to their Secret Pal's preferences and special day information.  If you want to 
-                    create a new Secret Pal group, follow the instructions for Step 1 and then continue with the 
-                    remaining steps.  If you entered your admin email address and group on the front page, you should 
-                    see see you have access to all tables and see the status of the participants. </p>
-            </div>
-          </div>
+      <h1 class="indexTitle card-title">The Easy Secret Pal Platform</h1>
+          <div class="indexText card-text">
+            <p>This platform provides an easy way to manage a Secret Pal group and provide participants with
+                online access to their Secret Pal's preferences and special day information.  If you want to 
+                create a new Secret Pal group, follow the instructions for Step 1 and then continue with the 
+                remaining steps.  If you entered your admin email address and group on the front page, you should 
+                see see you have access to all tables and see the status of the participants. </p>
         </div>
   </div>
 
 <main class="container-fluid">
-  <nav class="navbar-nav">
-        <a class="nav-item active nav-link" href="#">Admin Home</a></li>
-        <a class="nav-item nav-link" href="#step2">Table Views</a></li>
-        <a class="nav-item nav-link" href="#step3">Rules</a></li>
-        <a class="nav-item nav-link" href="#step4">User Page</a></li>
-        <a class="nav-item nav-link" href="#step5">Matched user data</a></li>
+  <nav class="nav nav-pills">
+        <a class="nav-item nav-link" href="./index.html">Sign In</a></li>
+        <a class="nav-item nav-link active" href="./adminSheet.html">Admin Cheat Sheet</a></li>
+        <a class="nav-item nav-link" href="./tables.html">Tables View</a></li>
+<!--        <a class="nav-item nav-link" href="#">User Page</a></li>
+        <a class="nav-item nav-link" href="#">Matched user data</a></li> -->
   </nav>
     
     <div class="container-fluid">
-        <h3>Welcome to the Admin's Cheat Sheet</h3>
+      <div class="welcome card px-2">
+        <h3 class="card-title">Welcome to the Admin's Cheat Sheet</h3>
+        <div class="card-body">
         <p>Congratulations on volunteering (or being volunteered) to the Secret Pal Administrator.  
-                This website is designed to make your life a little easier by making sending out notifications, 
-                matching users and managing the preference forms. </p>
-        <p>The Admin Cheat Sheet provides step by step instructions at a high level of things you should do. Open up 
-          each accordian below and follow the instructions and you will be done in record time. </p>
+            This website is designed to make your life a little easier by making sending out notifications, 
+            matching users and managing the preference forms. </p>
+        <p>The Admin Cheat Sheet provides step by step instructions of things you should do. Open up 
+          each accordian below, follow the instructions, and you will be done in record time. </p>
         <p>Secret Pal users will be returned to this site, but have their own pages which only allows them to either 
             agree or decline becoming a secret pal, confirm they agree to the rules, and complete their own preference
             survey form.  Once matched with another Secret Pal, then they will see their matches' survey answers. </p>
-        
-            <div id="accordion">
-                <div class="card">
-                  <div class="card-header" id="headingOne">
-                    <h5 class="mb-0">
-                      <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                          Step 1 - Designate the Administrator and Participants
-                      </button>
-                    </h5>
-                  </div>
-              
-                  <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-                    <div class="card-body">
-                        <p>Enter your email address and the emails of one to two other people who will assist with 
-                          managing the group.  The administrator can see all the information for secret pals, including their 
-                          matches, and all preference surveys.  If an administrator wants to participate, enter as a participant
-                          in another group.</p> 
+      
+        </div>
+      </div>
+    </div> 
 
-                        <p>In the Participants table only enter the email addresses of those you wish to participate.  When they
-                          accept the terms and complete the survey, then you will be able to match the secret pals.</p>
+    <div id="accordion">
+        <div class="card">
+          <div class="card-header" id="headingOne">
+            <h5 class="mb-0">
+              <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  Step 1 - Designate the Administrator and Participants
+              </button>
+            </h5>
+          </div>
+      
+          <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+            <div class="card-body">
+                <p>Enter your email address and the emails of one to two other people who will assist with 
+                    managing the group.  The administrator can see all the information for secret pals, including their 
+                    matches, and all preference surveys.  If an administrator wants to participate, enter as a participant
+                    in another group.</p> 
 
-                            <button type="submit" class="goToTables"><a href="./tables.html">Go to Tables</a></button>
+                  <p>In the Participants table only enter the email addresses of those you wish to participate.  When they
+                    accept the terms and complete the survey, then you will be able to match the secret pals.</p>
+                  <div class="tables">
+                      <button type="submit" class="goToTables"><a href="./tables.html">Go to Tables</a></button>
+                    </div>            
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingTwo">
+            <h5 class="mb-0">
+              <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  Step 2 - Create a Set of Rules
+              </button>
+            </h5>
+          </div>
+          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+            <div class="card-body">
+                <p>Create a set of rules to provide each secret pal. This should include a reference
+                    to the company's harrasment and discrimination policies.  It should mention how often each secret pal 
+                    should participate and if there are any limitations to dollar value of gifts.</p>
+                  <form id="rules" class="rules" action="" method="POST">
+                    <div class="form-group">
+                      <label for="comment">Rules:</label>
+                      <textarea class="form-control" rows="5" id="rules"></textarea>
                     </div>
-                  </div>
-                </div>
-                <div class="card">
-                    <div class="card-header" id="headingTwo">
-                      <h5 class="mb-0">
-                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            Step 2 - Create a Set of Rules
-                        </button>
-                      </h5>
-                    </div>
-                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-                      <div class="card-body">
-                          <p>You will need to create a set of rules to provide each secret pal. This should include a reference
-                              to your company's harrasment and discrimination policies.  It should mention how often each secret pal 
-                              should participate and if there are any limitations to dollar value of gifts.  If needed, examples are 
-                              provided to help creating guidelines.</p>
-                        </div>
-                    </div>
-                  </div>
-              </div>   
+                  </form>
+                  <ul>  See the Examples:
+                      <li>Secret Pal Gifts should be in the value range of $5.00 to $20.00 depending on the reason for celebration. </li>
+                      <li>Secret Pal Gifts should be exchanged at least 3 times during the year.</li>
+                      <li>Secret Pals will be revealed at the Christmas party scheduled in December with the final gift 
+                          exchange at the Christmas party.</li> 
+                      <li>All gifts must be considered in good taste and comply with all the company's Harassment and Discrimination policies. </li>             
+                      <li>You must try to keep your identify a secret for the year until the reveal party.  Please don't tell others who
+                          their secret pal is and don't ask who is your secret pal.</li>
+                  </ul>           
+             </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingThree">
+            <h5 class="mb-0">
+              <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                Step 3 - Send invitations to the Secret Pal Users
+              </button>
+            </h5>
+          </div>
+          <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+            <div class="card-body">
+             <p>
+
+             </p>
+
+            </div>
+          </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingThree">
+              <h5 class="mb-0">
+                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                  Collapsible Group Item #4
+                </button>
+              </h5>
+            </div>
+            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+              <div class="card-body">
+                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+              </div>
+            </div>
+          </div>
+      </div>
+
+
+
+      
        
       
-            <button class="accordion"></button>
-            <div class="panel">
-                 
-                    <h3>Create a Set of Rules</h3>
-                   
-                        <form id="ruleForm">
-                            <label>Enter the rules in the text box below.</label>
-                            <input type="textarea" id="rules" placeholder="Enter Rules Here">
-                        </br>
-                        </form>
-                        <p>Choose from the rules below to help you create your rule instructions. </p>
-
+           
                   </div>
                   <button class="accordion">Section 3 - Designate Users to be Secret Pals</button>
                   <div class="panel">

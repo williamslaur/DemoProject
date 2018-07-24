@@ -32,21 +32,30 @@ body{
   margin: 30px;
 }
 
+.nav {
+  text-align: center;
+  padding: 5px;
+  font-size: 16px;
+  color: orange;
+  margin: 5px;
+}
+
 .browse {
   text-align: center;
 }
-#browseButton {
+#browseButton, .saveData, #retrieveGroup {
 background-color: #fbff00;
 border-radius: 20px;
 margin: 10px;
 max-width: 75%;
+font-size: large;
 }
 
 .contents {
   background-color: aqua;
   max-width: 100%;
 }
-.participant, .admin {
+div .participant, div .admin {
   border: 2px solid #31B404;
   border-radius: 20px;
   padding: 10px;
@@ -60,9 +69,6 @@ max-width: 75%;
   text-shadow: 3px 3px rgb(155, 160, 109);
 }
 
-.inputFields {
-text-align: center;
-}
 
 .footer {
   padding: 1rem;

@@ -5,13 +5,23 @@
 <link href="styles/stylesheet.css" rel="stylesheet" type="text/css" />
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> -->
 
-<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<!--<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+ <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script> -->
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
 <script src="scripts/main.js"></script>
 
 
@@ -19,9 +29,7 @@
 <body>
 
     <header class="header container-fluid"> 
-        <div class="row">
-        <div class="card">  
-            <h1 class="indexTitle card-title">The Easy Secret Pal Platform</h1>
+       <h1 class="indexTitle card-title">The Easy Secret Pal Platform</h1>
             <div class="indexText card-text">
                 <p>This platform provides an easy way to manage a Secret Pal group and provide participants with
                     online access to their Secret Pal's preferences and special day information.  If you are a first
@@ -32,64 +40,66 @@
                 <button id="browseButton"><a href="adminSheet.html">Browse Admin Instructions to See How to 
                     Easily Manage a Secret Pal Group</a></button>
             </div>
-        </div>
-        </div>
     </header>
 
     <div class="contents container-fluid">
-        <div class="row">
-            <div class="card participant mx-2 col-md-12">
+        <div class="row inputTables">
+            <div class="card participant px-2 col-sm-6">
                 <h2 class="card-title">Participant Sign In Box</h2>
-                <p class="card-text">Please enter your email address in the participant box and click the submit button to 
-                    access your Secret Pal's preferences or your own survey sheet to make changes.</p>
-                <form class="inputFields form-horizontal needs-validation" novalidate>
+                <p class="card-text">Please enter your Group Name and Email Address in the participant box and click the submit button. </p>
+
+                <form id="partInputFields" class="inputFields" action="" method="post">
                     <div class="form-group">
-                    <label class="control-label col-sm-2" for="partGrpName">Group Name:</label>
-                    <div class="col-sm-9">
-                    <input type="text" id="partGrpName" placeholder="Enter Group Name" class="form-control" required></div>
-                    <div class="invalid-feedback">
-                            Please enter Group Name provided from your Secret Pal Administrator.
-                          </div>
+                        <label for="validationDefault01">Group Name:</label>
+                        <input type="text" id="validationDefault01" name="partGrpName" placeholder="Enter Group Name" class="form-control" tabindex="1" value="" required>
+                            <div class="invalid-feedback">
+                                Please enter Group Name provided from your Secret Pal Administrator.
+                            </div>
                     </div>
+                    
                     <div class="form-group">
-                    <label class="control-label col-sm-2" for="partEmail">Email:</label>
-                    <div class="col-sm-9">
-                    <input type="email" id="partEmail" name="partEmail" placeholder="Enter Email Address" class="form-control" required> </div>
-                    <div class="invalid-feedback col-sm-offset-2">
-                            Please enter the Email address which received this invitation from your Secret Pal Administrator.
-                          </div>
+                        <label for="validationDefault02">Email:</label>
+                        <input type="email" id="validationDefault02" name="partEmail" placeholder="Enter Email Address" class="form-control" tabindex="2" value="" required> 
+                            <div class="invalid-feedback">
+                                Please enter the Email address which received this invitation from your Secret Pal
+                                Administrator.  
+                            </div>
                     </div>
+               
+                    <div class="partBtn col">
+                        <button type="submit" id="partSubmit" class="btn btn-default">Submit</button>
+                    </div>
+                    <p>You will be directed to your page to view your Secret Pal's survey results and your own.</p>
                 </form>
-                <div class="col-sm-offset-2">
-                    <button type="submit" id="partSubmit" class="btn btn-default">Submit</button></div>
- 
             </div>
-        </div>
-        <div class="row">
-            <div class="card admin col-md-12">
+        
+      
+            <div class="card admin col-sm-6">
                 <h2 class="card-title">Administrator Sign In Box</h2>
-                <p class="card-text">Please enter your email address in the administrator box and click submit to access all user
-                    information and manage the Secret Pal group.</p>
-                <form class="inputFields form-horizontal needs-validation">
+                <p class="card-text">Please enter your email address in the administrator box and click the submit button.</p>
+                
+                <form id="adminInputFields" class="InputFields" action="/participant.html" method="post">
                     <div class="form-group">
-                    <label class="control-label col-sm-2" for="adminGrpName">Group Name:</label>
-                    <div class="col-sm-10">
-                    <input type="text" id="adminGrpName" placeholder="Enter Group Name" class="form-control" required></div>
-                    <div class="row invalid-feedback col-sm-offset-2">
+                    <label class="control-label" for="validationDefault03">Group Name:</label>
+                    <div>
+                    <input type="text" id="validationDefault03" name="adminGrpName" placeholder="Enter Group Name" class="form-control" value="" required></div>
+                        <div class="invalid-feedback">
                            <p> Please enter Group Name provided from your Secret Pal Administrator.</p>
-                          </div>
+                        </div>
                     </div>
                     <div class="form-group">
-                    <label class="control-label col-sm-2" for="adminemail">Email:</label>
-                    <div class="col-sm-10">    
-                    <input type="email" id="adminEmail" placeholder="Enter Email Address" class="form-control" required></div>
-                    <div class="invalid-feedback col-sm-offset-2">
+                    <label class="control-label" for="validationDefault04">Email:</label>
+                    <div>    
+                    <input type="email" id="validationDefault04" name="adminEmail" placeholder="Enter Email Address" class="form-control"  value="" required></div>
+                    <div class="invalid-feedback">
                             Please enter the Email address which received this invitation from your Secret Pal Administrator.
                           </div>    
                     </div>
-                </form>
-                <div class="col-sm-offset-2">
+          
+                <div class="adminbtn col">
                 <button type="submit" id="adminSubmit" class="btn btn-default col-sm-offset-2">Submit</button></div>
+                <p class="card-text">You will be directed to a page to view all participant's data. </p>
+            </form>
             </div>
         </div>
         

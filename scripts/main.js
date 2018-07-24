@@ -2,131 +2,143 @@ $(document).ready(function(){
 
 // array objects to represent data in a back end
 
-santaadmin = [
-  {groupName: "Santa", adminEmail: "Admin1@Pal.com"},
-  {groupName: "Santa", adminEmail: "Admin2@Pal.com"},
+var santaadmin = [
+  {groupName: "santa", adminEmail: "admin1@pal.com"},
+  {groupName: "santa", adminEmail: "admin2@pal.com"},
 ];
-santapart = [
-  {groupName: "Santa", participantEmail: "user1@Pal.com", terms: "x", survey: "x", matchEmail: "user3@Pal.com"},
-  {groupName: "Santa", participantEmail: "user2@Pal.com", terms: "x", survey: "x", matchEmail: "user5@Pal.com"},
-  {groupName: "Santa", participantEmail: "user3@Pal.com", terms: "x", survey: "x", matchEmail: "user1@Pal.com"},
-  {groupName: "Santa", participantEmail: "user4@Pal.com", terms: "x", survey: "x", matchEmail: "user2@Pal.com"},
-  {groupName: "Santa", participantEmail: "user5@Pal.com", terms: "x", survey: "x", matchEmail: "user4@Pal.com"},
+
+var santapart = [
+  {groupName: "santa", participantEmail: "user1@pal.com", terms: "x", survey: "x", matchEmail: "user3@pal.com"},
+  {groupName: "santa", participantEmail: "user2@pal.com", terms: "x", survey: "x", matchEmail: "user5@pal.com"},
+  {groupName: "santa", participantEmail: "user3@pal.com", terms: "x", survey: "x", matchEmail: "user1@pal.com"},
+  {groupName: "santa", participantEmail: "user4@pal.com", terms: "x", survey: "x", matchEmail: "user2@pal.com"},
+  {groupName: "santa", participantEmail: "user5@pal.com", terms: "x", survey: "x", matchEmail: "user4@pal.com"},
 ] 
 
-//event listener on partSubmit
+//get participants information
 
-$(partSubmit).click(function(){
+document.getElementById("partSubmit").addEventListener("click", comparePartForm);
+document.getElementById("adminSubmit").addEventListener("click", compareAdminForm);
 
-  //verifying input is not empty and checking email is valid
+//get value of input fields and identify the object to look through
 
-    if ($(partEmail).val=="") {
-    alert("Please enter a valid email address before clicking Submit.")
+function comparePartForm() { 
+
+  var partGrpVal = document.forms["partInputFields"]["partGrpName"].value;
+  var partEmVal = document.forms["partInputFields"]["partEmail"].value;
+  
+  var partGrpValstr = partGrpVal.toLowerCase();
+  var partEmValstr = partEmVal.toLowerCase();
+
+  var partArray = partGrpValstr + "part";
+
+  //go to object and find participantEmail
+
+  
+  function checkPartEmail(pal){
+    return pal.participantEmail === (partEmValstr);
     
-    
-    } else {
-      var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+  }
+  debugger;
 
-      return emailReg.test(partEmail)};
+//how do I get this to realize that myArray is the same as the Santapart array listed above when I use Santa as group name?
 
-    //if pass validation - test to see if groupname and participant email are in data
+  var found = partArray.find(checkPartEmail);
 
-    var x = $(participantEmail).val();
-    var newArray = $(groupName).val() + "part"
-   
+  
+  //convert to object to JSON string - is this needed?
 
-    function findUser(participantEmail) {
-      for(let i = 0; i<newArray.length; ++i) {
-        if(newArray[i].participantEmail === x) {
-          return newArray[i];
-        }
-      }
+  var myJSON = JSON.stringify(found);
+  
 
-    }
-});
 
-//event listener on adminSubmit
+  //send to jsonstore.io = how do I get the body: to input the object "found"?
 
-  $(adminSubmit).click(function(){
+  fetch('https://www.jsonstore.io/04c5db65a78544c553e1a355b6629239b8e39ec0d943a88cefb9efa8da71f1ae/users/1', {
+  headers: {
+    'Content-type': 'application/json'
+  },
+  method: 'POST',
+  body: { groupName: 'xstr', participantEmail: 'ystr' },
 
-    //verifying input is not empty and checking email is valid
-
-    if ($(adminEmail).val=="") {
-      alert("Please enter a valid email address before clicking Submit.")
-      } else {
-        var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
-
-        return emailReg.test(adminEmail)
-      }
   });
 
+  //send the user to the participants page
 
-      // test to see if group name and admin email are in data
-
-
-    // functions to add or subtract lines from admin input tables  
-
-    $(plus1).click(function addLine1() {
-        var tabLines = document.getElementById("adminTabLines");
-        var tabLinesRow = tabLines.insertRow(tabLines.rows.length-1);
-        var col1html = "<img src='./images/redMinus.png' onclick='removeLine1(this);'>";
-        var col2html = "<input type='email' name='adminEmailInput' />";
-              
-        var col1 = tabLinesRow.insertCell(0); col1.innerHTML=col1html;
-        var col2 = tabLinesRow.insertCell(1); col2.innerHTML=col2html;
-      });
-
-    $(minus1).click(function removeLine1(lineItem) {
-        var row = lineItem.parentNode.parentNode;
-        row.parentNode.removeChild(row);
-      });
-     
-    // functions to add or subtract lines from participants input tables
-
-    $(plus2).click(function addLine2() {
-        var tabLines = document.getElementById("partTabLines");
-        var tabLinesRow = tabLines.insertRow(tabLines.rows.length-1);
-        var col1html = "<img src='./images/redMinus.png' onclick='removeLine2(this);'>";
-        var col2html = "<input type='email' name='partEmailInput' />";
-        var col3html = "<input type='text' name='termsInput' />";
-        var col4html = "<input type='text' name='surveyInput' />";
-        var col5html = "<input type='email' name='matchedPal' />";
-        
-        var col1 = tabLinesRow.insertCell(0); col1.innerHTML=col1html;
-        var col2 = tabLinesRow.insertCell(1); col2.innerHTML=col2html;
-        var col3 = tabLinesRow.insertCell(1); col3.innerHTML=col3html;
-        var col4 = tabLinesRow.insertCell(1); col4.innerHTML=col4html;
-        var col5 = tabLinesRow.insertCell(1); col5.innerHTML=col5html;
-      });
-     
-      $(minus2).click(function removeLine2(lineItem) {
-        var row = lineItem.parentNode.parentNode;
-        row.parentNode.removeChild(row);
-      });
+  window.location.assign("file:///C:/Users/Laura/DemoProject/participant.html")
       
-      var frmData = {};              // an object to contain all form data
-      var arrLines = new Array();    // array to contain the dynamic lines
-      
-      var tabLines = document.getElementById("partTabLines").rows.length-1;
-      
-      for (i=0;i<tabLines;i++) {
-        arrLines[i] = {};
-        arrLines[i]['no']     = i+1;
-        arrLines[i]['field1'] = $("#frmLines input[name=field1]").eq(i).val();
-        arrLines[i]['field2'] = $("#frmLines input[name=field2]").eq(i).val();
-        arrLines[i]['field3'] = $("#frmLines input[name=field3]").eq(i).val();
-        arrLines[i]['field4'] = $("#frmLines input[name=field3]").eq(i).val();
-        arrLines[i]['field5'] = $("#frmLines input[name=field3]").eq(i).val();
-      }
-      frmData['lines'] = arrLines;
-      
-      //frmData['another_field'] = $('#frmLines input[name=another_field]").val();
-      
-      //var jsonData = JSON.stringify(frmData);
-      
-      // lines of data now in a JSON structure as indexed array
-      // (plus other fields in the JSON as required)
-      // ready to post via ajax etc
+  }; else {
+    alert("User is not found.  Ask your administrator to verify your Group Name and Email.");
+  };
 
 
-})
+  
+
+
+//get value of administrator's input fields and identify the object to look through
+
+function compareAdminForm() {
+  var x = document.forms["adminInputFields"]["adminGrpName"].value;
+  var y = document.forms["adminInputFields"]["adminEmail"].value;
+
+  var xstr = x.toLowerCase();
+  var ystr = y.toLowerCase();
+
+  var myArray = xstr + "admin";
+
+
+//go to object and find adminEmail
+
+function checkAdminEmail(pal){
+  return pal.adminEmail === (ystr);
+  
+}
+///how can get this to realize that myArray is the same as the santaadmin object above when I use Santa as group name?
+
+var found = myArray.find(checkAdminEmail);
+
+console.log(found);
+
+//convert to object to JSON string - is this needed?
+
+var myJSON = JSON.stringify(found);
+
+
+
+  //send to jsonstore.io = how do I get the body: to input the object "found or myJSON"?
+
+  fetch('https://www.jsonstore.io/9ca1ddbf9c352de661626070ba46dfa7cc63424575caf1c51993b5b421300552/users/1', {
+  headers: {
+    'Content-type': 'application/json'
+  },
+  method: 'POST',
+  body: { name: 'jon snow', age: 31 },
+
+  });
+
+  //send the user to the administrators page
+
+  window.location.assign("file:///C:/Users/Laura/DemoProject/adminSheet.html")
+      
+  }; else {
+    alert("User is not found.  Check your Group Name and Email, or begin creating a new group.");
+  };
+
+
+}
+});
+
+// array objects to represent data in a back end
+
+var santaadmin = [
+  {groupName: "santa", adminEmail: "admin1@pal.com"},
+  {groupName: "santa", adminEmail: "admin2@pal.com"},
+];
+
+var santapart = [
+  {groupName: "santa", participantEmail: "user1@pal.com", terms: "x", survey: "x", matchEmail: "user3@pal.com"},
+  {groupName: "santa", participantEmail: "user2@pal.com", terms: "x", survey: "x", matchEmail: "user5@pal.com"},
+  {groupName: "santa", participantEmail: "user3@pal.com", terms: "x", survey: "x", matchEmail: "user1@pal.com"},
+  {groupName: "santa", participantEmail: "user4@pal.com", terms: "x", survey: "x", matchEmail: "user2@pal.com"},
+  {groupName: "santa", participantEmail: "user5@pal.com", terms: "x", survey: "x", matchEmail: "user4@pal.com"},
+] 

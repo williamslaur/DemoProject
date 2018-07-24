@@ -1,0 +1,69 @@
+body{
+    background-color:aqua;
+    max-width: 1120px;
+    height: 100%;
+    margin: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+ }
+ html {
+  height: 100%;
+  margin: 0;
+}
+ 
+ .header{
+     font-weight: bold;
+     max-width: 100%;
+     padding-bottom: 10px;
+     background-color:#dee2f7;
+     background-image: url("../images/gift.jpg");
+     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+ }
+ 
+ .indexTitle {
+    text-align: center;
+    padding: 30px;
+    font-size: 60px;
+    color: #fbff00;
+    text-shadow: 5px 5px rgb(155, 160, 109);
+    }
+ 
+ .indexText {
+   background-color:rgb(249, 177, 236, 0.5);
+   margin: 30px;
+ }
+ 
+ .contents {
+    background-color: aqua;
+    max-width: 100%;
+    padding-bottom: 10px;
+  }
+
+  .footer {
+    padding: 1rem;
+    background-color: #7bf7af;
+    text-align: center;
+  }
+
+.form-inline {
+    margin: 5px;
+
+}
+
+.noThanks, .saveProfile, .completeProfile, .agreement {
+    background-color: #fbff00;
+    border-radius: 20px;
+    margin: 10px;
+    width: 75%;
+    font-size: large;
+}
+.noThankyou, .agree, div .saveSection {
+    text-align: center;
+}
+
+div .rules {
+    background-color: lightpink;
+}
+
+div .profile {
+    background-color: lightgoldenrodyellow;
+}
