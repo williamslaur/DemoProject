@@ -67,19 +67,19 @@
       
         </div>
       </div>
-    </div> 
+    
 
     <div id="accordion">
         <div class="card">
           <div class="card-header" id="headingOne">
-            <h5 class="mb-0">
+            <h2 class="mb-0">
               <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                   Step 1 - Designate the Administrator and Participants
               </button>
-            </h5>
+            </h2>
           </div>
       
-          <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+          <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
             <div class="card-body">
                 <p>Enter your email address and the emails of one to two other people who will assist with 
                     managing the group.  The administrator can see all the information for secret pals, including their 
@@ -112,6 +112,9 @@
                       <label for="comment">Rules:</label>
                       <textarea class="form-control" rows="5" id="rules"></textarea>
                     </div>
+                    <div class="rulesbtn">
+                      <button type="submit" class="saveRules" id="saveRules">Save the Rules</button>
+                    </div>
                   </form>
                   <ul>  See the Examples:
                       <li>Secret Pal Gifts should be in the value range of $5.00 to $20.00 depending on the reason for celebration. </li>
@@ -136,86 +139,74 @@
           <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
             <div class="card-body">
              <p>
-
+              This invitation will be sent to all the Secret Pal's who have not agreed to the rules, 
+              completed the survey and have not declined to participate.  This is so you can send the email again as a 
+              reminder if needed.  The email will include the Rules you created in Step 2. 
+              Please include a date in the field below when they must finish the sign up and profile survey. And enter a 
+              one word name for a Secret Pal group name.  This is needed to make sure users only see their matched user.
+              
+              <label for="regDate">Date must complete registration.</label><input type="date" id="regDate"></input>
+              <label for="groupName">Group Name</label><input type="text" id="groupName">
              </p>
+             <p>
+               Dear Secret Pal, </br>
+
+               You are invited to participate in this year's Secret Pal program.  Please go to the link attached to this 
+               email and completely read the rules and agree to them, and then complete the survey questions to set your 
+               profile.  Once that is done, and the registration time is expired, you will be matched with a secret pal and
+               can view their profile on your page.  If you don't wish to participate, please go to the link and click the 
+               button for not participating.  This will prevent you from getting follow up emails. </br>
+              </br>
+               Your group name is: <p id="groupName"></p>
+
+               <p><a href="file:///C:/Users/Laura/DemoProject/partSignIn.html" target="blank">Secret Pal Sign In Page</a></p>
+
+               <div class="invite">
+              <button type="submit" class="sendInvite" id="sendInvite"><a href="mailto:someone@example.com?Subject=Hello%20again" target="_top">Send Email</a></button>
+               </div>
 
             </div>
           </div>
         </div>
         <div class="card">
-            <div class="card-header" id="headingThree">
+            <div class="card-header" id="headingFour">
               <h5 class="mb-0">
                 <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                  Collapsible Group Item #4
+                  Step 4 - Match the Secret Pals
                 </button>
               </h5>
             </div>
             <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
               <div class="card-body">
-                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+
+                <p>The secret pals are ready to be matched.  Be aware that once you match the secret pals, you can no longer 
+                make changes to the pals.  If you don't like the way they are matched at first, then click the match button 
+                again.</p>
+                </br>
+                <div class="matchPal">
+                    <button type="submit" class="matchPals" id="matchPals">Match Secret Pals</button>
+                </div>
+                <p>Go to the tables and view the matched users for the Secret Pals</p>
+                
               </div>
             </div>
           </div>
+
+
       </div>
-
-
-
-      
-       
-      
-           
-                  </div>
-                  <button class="accordion">Section 3 - Designate Users to be Secret Pals</button>
-                  <div class="panel">
-                  
-                    <h3>Designate Users to be Secret Pals</h3>
-                    <p>Enter the email address for each person you want to add to the secret pal group named above.  
-                         Click submit after each email entry to add their name to a table.</p>
-                    <p>If you have more than 20 people to include in your group, create a group name for smaller numbers of people.  
-                        If needed, enter a group name in the form below and click submit.</p>
-                        <form id="usersForm">
-                            <label>Enter the name of the small group.</label>
-                            <input type="text" id="groupName" placeholder="Secret Elves"> </br>
-
-                            <input type="email" id="palEmail" placeholder="Secret Pal email address"><input type="button" id="mainAdminSubmit">Submit</button></br>
-                            <label>Enter the email address for each person to be a part of the Secret Pal group.</label>
-                        </form>
-                        </br>
-                
-                </div>
-
-
-                <button class="accordion">Section 4 - Choose Preference Survey Questions</button>
-                <div class="panel"></div>
-                 
-                    <h3>Choose Preference Survey Questions</h3>
-                    <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-                  </div>
-
-                  <div id="step5" class="tab-pane fade">
-                        <h3>Match Secret Pals</h3>
-                        <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-                      </div>
-                </div>
-              </div>
               <div class="footer">
-        
+    
                   <div class="container-fluid">
                       <nav class="navbar">
-                      <ul class="nav navbar-nav">
-                      <li class="active"><a href="aboutMe.html">About the Creator</a></li>
-      <!--                       <li><a href="#">Send Comments/Suggestions to Creator</a></li>  -->
-                      </ul>
+                          <ul class="nav navbar-nav">
+                              <li class="active"><a href="aboutMe.html">About the Creator</a></li>
+          <!--              <li><a href="#">Send Comments/Suggestions to Creator</a></li>  -->
+                          </ul>
                       </nav>
                       <p>Thank you to Pixabay for free images and backgrounds. <a href="https://pixabay.com/en/photos/" target="blank">Pixabay Website</a></p>
                   </div>
-              </div>
-          </div>   
-                    
-                   
-        </div>
-    </div>     
-    
+              </div>   
+            </div>
 
 </main>
 

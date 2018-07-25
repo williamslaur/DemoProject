@@ -4,16 +4,11 @@
     <link href="styles/stylesheet.css" rel="stylesheet" type="text/css" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-  <!--  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script> -->
-       
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>    
     <script src="scripts/tables.js"></script>
    
 <title>Tables for Input Data</title>
@@ -22,10 +17,8 @@
 
 <body>
 
-    <div class="header container-fluid">
-        <div class="row">
-             <div class="card">
-               <h1 class="indexTitle card-title">The Easy Secret Pal Platform</h1>
+    <header class="header container-fluid">
+          <h1 class="indexTitle card-title">The Easy Secret Pal Platform</h1>
                <div class="indexText card-text">
                    <p>This platform provides an easy way to manage a Secret Pal group and provide participants with
                        online access to their Secret Pal's preferences and special day information.  If you want to 
@@ -33,9 +26,7 @@
                        remaining steps.  If you entered your admin email address and group on the front page, you should 
                        see see you have access to all tables and see the status of the participants. </p>
                </div>
-             </div>
-           </div>
-     </div>
+    </header>
 
      <div class="contents container-fluid">
 
@@ -124,6 +115,78 @@
 
           <button type="submit" class="saveData" id="saveData">Save Data</button>
     </div>
+
+<div class="container-fluid tableData">
+<div class="adminData">Here is the administrator's data saved previously for the group you entered.
+    <div class="table-responsive">
+        <table class="table" id="adminTable">
+          <thead>
+            <tr>
+              <th>GroupName</th>
+              <th>Admin Email Address</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="partData">Here is the participant's data saved previously for the group you entered.
+        <div class="table-responsive">
+            <table class="table" id="adminTable">
+              <thead>
+                <tr>
+                  <th>GroupName</th>
+                  <th>Participant Email</th>
+                  <th>Terms</th>
+                  <th>Survey</th>
+                  <th>Match Email</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>
+       $(document).ready(function(){
+        var country = ["Norway", "Sweden", "Denmark"];
+        var capital = ["Oslo", "Stockholm" , "Copenhagen"];
+    
+        var bodyString = '';
+        $.each(country, function(index, country) {
+            bodyString += ('<tr><td>'+country+'</td><td>'+capital[index]+'</td></tr>');
+        });
+        $('.country tbody').html(bodyString);
+        
+        });
+    </script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    </head>
+    <body>
+      <table class="table table-striped country">
+          <thead>
+              <tr><th>Country</th><th>Capital</th>
+          </thead>
+          <tbody></tbody>
+      </table>  -->
 
 
   </div>

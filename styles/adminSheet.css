@@ -33,8 +33,17 @@ body{
   margin: 30px;
 }
 
+.nav {
+  text-align: center;
+  padding: 5px;
+  font-size: 16px;
+  color: orange;
+  margin: 5px;
+}
 .contents {
   background-color: aqua;
+  max-width: 100%;
+  padding-bottom: 10px;
 }
 
 h2 {
@@ -58,7 +67,7 @@ div .welcome {
   background-color: rgb(166, 206, 243);
 }
 
-.goToTables {
+.goToTables, .saveRules, .sendInvite, .matchPals {
   background-color: #fbff00;
   border-radius: 20px;
   margin: 10px;
@@ -66,6 +75,23 @@ div .welcome {
   font-size: large;
 }
 
-.tables {
+.tables, .rulesbtn, .invite, .matchPal {
   text-align: center;
+}
+
+#collapseOne, #collapseTwo, #collapseThree, #collapseFour {
+  background-color:rgb(237, 220, 240);
+}
+
+#headingOne, #headingTwo, #headingThree, #headingFour {
+  background-color: rgb(230, 155, 243);
+  text-align: center;
+}
+
+#headingOne button, #headingTwo button, #headingThree button, #headingFour button {
+  color: #fbff00;
+  font-size: large;
+  font-weight: bold;
+  text-shadow: 3px 3px rgb(155, 160, 109);
+  text-decoration: none;
 }

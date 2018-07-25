@@ -13,6 +13,7 @@ body{
  .header{
      font-weight: bold;
      max-width: 100%;
+     padding-bottom: 10px;
      background-color:#dee2f7;
      background-image: url("../images/shining-3182654_1920.png");
      background-repeat: repeat-y;
@@ -88,3 +89,6 @@ div .emailsend {
   justify-content: center;
 }
 
+.tableData {
+  background-color: bisque;
+}

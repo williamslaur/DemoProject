@@ -33,11 +33,11 @@ function comparePartForm() {
 
   const partArray = partGrpValstr + "part";
 
-  //check if the new const will be found as an array
+  //check if the new const will be found as an array - this fails - how do I convert string to object without recreating object?
 
   array.isarray(partArray);
 
-  //go to object and find participantEmail
+  //go to object and find participantEmail - 
 
   
   function checkPartEmail(pal){
@@ -75,7 +75,7 @@ function comparePartForm() {
   };
 
 
-  
+  //need to get an error along the way to pop up to check group name if it fails. 
 
 
 //get value of administrator's input fields and identify the object to look through

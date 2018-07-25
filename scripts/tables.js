@@ -1,13 +1,6 @@
 $(document).ready(function(){
 
-    //obtain group name from index.html 
-
-    // from index.html
-    document.getElementById("write").innerHTML = window.location.search; // you will have to parse
-    // the query string to extract the
-    // parameter you need
-
-
+    
     // functions to add or subtract lines from admin input tables  
 
     $(plus1).click(function addLine1() {
@@ -77,3 +70,5 @@ $(document).ready(function(){
       // ready to post via ajax etc
 
 });
+
+
