@@ -49,14 +49,14 @@ body{
 
 }
 
-.noThanks, .saveProfile, .completeProfile, .agreement {
+.noThanks, .saveProfile, .completeProfile, .agreement, .partProfile {
     background-color: #fbff00;
     border-radius: 20px;
     margin: 10px;
     width: 75%;
     font-size: large;
 }
-.noThankyou, .agree, div .saveSection {
+.noThankyou, .agree, div .saveSection, .profileBtn {
     text-align: center;
 }
 
