@@ -36,7 +36,7 @@ function comparePartForm() {
 
   //go to object and find participantEmail -
   
-  var found = partTable.filter(function(element){
+  var found = partTable.find(function(element){
     return (element.participantEmail === partEmValstr && element.groupName === partGrpValstr);
   });
 

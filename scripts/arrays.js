@@ -1,23 +1,13 @@
 
 
-var Santaadmin = [
-    {groupName: "Santa", adminEmail: "Admin1@Pal.com"},
-    {groupName: "Santa", adminEmail: "Admin2@Pal.com"},
-];
-var Santapart = [
-    {groupName: "Santa", participantEmail: "user1@Pal.com", terms: "x", survey: "x", matchEmail: "user3@Pal.com"},
-    {groupName: "Santa", participantEmail: "user2@Pal.com", terms: "x", survey: "x", matchEmail: "user5@Pal.com"},
-    {groupName: "Santa", participantEmail: "user3@Pal.com", terms: "x", survey: "x", matchEmail: "user1@Pal.com"},
-    {groupName: "Santa", participantEmail: "user4@Pal.com", terms: "x", survey: "x", matchEmail: "user2@Pal.com"},
-    {groupName: "Santa", participantEmail: "user5@Pal.com", terms: "x", survey: "x", matchEmail: "user4@Pal.com"},
-] 
 
+var profiles = [
+    {groupName: "santa", participantEmail: "user3@pal.com", bdayDate: "03/31/1955", annDate: "07/01/1989", wkAnnDate: "11/15/1999", familyTime: "camping", pets: "5 dogs", stores: "cabelas", collect: "dust", personMeet: "great grandmother", sweets: "chocolate", food: "cherries", drink: "margaritas", hobby: "photography", color: "blue", bookAuthor: "a a milne", poemPoet: "kalil gabral", vacation: "all over", favoriteHoliday: "birthday", showMovie: "big bang theory", musicArtist: "janis ian", teamAthlete: "colts", season: "spring", restaurants: "mexican", noItem: "", noFoodDrink: "licorice", noMedia: "", noTrinkets: ""},
+    {groupName: "santa", participantEmail: "user1@pal.com", bdayDate: "01/01/1970", annDate: "01/01/1990", wkAnnDate: "01/01/1995", familyTime: "fishing", pets: "5 dogs", stores: "sears", collect: "nothing", personMeet: "ghandi", sweets: "chocolate", food: "cherries", drink: "margaritas", hobby: "photography", color: "blue", bookAuthor: "a a milne", poemPoet: "kalil gabral", vacation: "all over", favoriteHoliday: "birthday", showMovie: "big bang theory", musicArtist: "janis ian", teamAthlete: "colts", season: "spring", restaurants: "mexican", noItem: "", noFoodDrink: "licorice", noMedia: "", noTrinkets: ""},
+    {groupName: "santa", participantEmail: "user2@pal.com", bdayDate: "05/30/1955", annDate: "06/01/1989", wkAnnDate: "10/15/1997", familyTime: "shopping", pets: "goldfish", stores: "payless", collect: "cars", personMeet: "great grandmother", sweets: "chocolate", food: "cherries", drink: "margaritas", hobby: "photography", color: "blue", bookAuthor: "a a milne", poemPoet: "kalil gabral", vacation: "all over", favoriteHoliday: "birthday", showMovie: "big bang theory", musicArtist: "janis ian", teamAthlete: "colts", season: "spring", restaurants: "mexican", noItem: "", noFoodDrink: "licorice", noMedia: "", noTrinkets: ""},
+    {groupName: "santa", participantEmail: "user4@pal.com", bdayDate: "06/13/1970", annDate: "08/01/1999", wkAnnDate: "11/15/2006", familyTime: "vacationing", pets: "fluffy", stores: "target", collect: "marbles", personMeet: "great grandmother", sweets: "snickers", food: "cherries", drink: "margaritas", hobby: "photography", color: "blue", bookAuthor: "a a milne", poemPoet: "kalil gabral", vacation: "all over", favoriteHoliday: "birthday", showMovie: "big bang theory", musicArtist: "janis ian", teamAthlete: "colts", season: "spring", restaurants: "mexican", noItem: "", noFoodDrink: "licorice", noMedia: "", noTrinkets: ""},
+    {groupName: "elves", participantEmail: "user3@elves.com", bdayDate: "01/15/1965", annDate: "04/01/1989", wkAnnDate: "02/01/2010", familyTime: "", pets: "snake", stores: "", collect: "money", personMeet: "great grandmother", sweets: "chocolate", food: "cherries", drink: "beer", hobby: "photography", color: "blue", bookAuthor: "a a milne", poemPoet: "kalil gabral", vacation: "all over", favoriteHoliday: "birthday", showMovie: "big bang theory", musicArtist: "janis ian", teamAthlete: "colts", season: "spring", restaurants: "mexican", noItem: "", noFoodDrink: "licorice", noMedia: "", noTrinkets: ""},
+    {groupName: "elves", participantEmail: "user1@elves.com", bdayDate: "03/31/1970", annDate: "07/01/2005", wkAnnDate: "04/15/2008", familyTime: "", pets: "2 catss", stores: "", collect: "memories", personMeet: "great grandmother", sweets: "chocolate", food: "cherries", drink: "margaritas", hobby: "photography", color: "blue", bookAuthor: "a a milne", poemPoet: "kalil gabral", vacation: "all over", favoriteHoliday: "birthday", showMovie: "big bang theory", musicArtist: "janis ian", teamAthlete: "colts", season: "spring", restaurants: "mexican", noItem: "", noFoodDrink: "licorice", noMedia: "", noTrinkets: ""},
 
-
-var SantaUser1 = [
-    {groupName: "Santa", participantEmail: "user1@Pal.com", bdayDate: "01/01/1970", annDate: "01/01/1990", wkAnnDate: "01/01/1995", pets: "Kitty", sweets: "PayDay and Snickers"},
 ]
 
-var SantaUser2 = [
-    {groupName: "Santa", participantEmail: "user2@Pal.com", bdayDate: "10/10/1980", annDate: "06/01/2005", wkAnnDate: "06/06/2006", pets: "Fluffy goldfish", sweets: "Mars"},
-]

@@ -1,6 +1,43 @@
 $(document).ready(function(){
 
-    
+
+  //event listener to pull array data
+
+  document.getElementById("retrieveGrp").addEventListener("click", retrieveTables);
+
+  
+  function retrieveTables(){
+
+    var group = document.forms["groupName"]["grpNameInput"].value;
+    var groupstr = group.toLowerCase();
+
+    //retrieve administrators for the group
+
+    var adminGrp = adminTable.find(function(element){
+      return (element.groupName === groupstr);
+    })
+      console.log(adminGrp);
+
+      //retrieve participants for the group
+
+    var partGrp = partTable.find(function(element){
+      return (element.groupName === groupstr);
+    })
+    console.log(partGrp);
+  };
+
+  //to populate the data in the tables for the data
+  
+  var bodyString = '';
+
+        $.each(groupName, function(index, groupName) {
+            bodyString += ('<tr><td>'+groupName+'</td><td>'+adminEmail[index]+'</td></tr>');
+        });
+        $('.groupName tbody').html(bodyString);
+        
+        
+
+
     // functions to add or subtract lines from admin input tables  
 
     $(plus1).click(function addLine1() {
@@ -72,3 +109,19 @@ $(document).ready(function(){
 });
 
 
+
+var adminTable = [
+  {groupName: "santa", adminEmail: "admin1@pal.com"},
+  {groupName: "santa", adminEmail: "admin2@pal.com"},
+  {groupName: "elves", adminEmail: "admin1@elves.com"},
+];
+
+var partTable = [
+  {groupName: "santa", participantEmail: "user1@pal.com", terms: "x", survey: "x", matchEmail: "user3@pal.com"},
+  {groupName: "santa", participantEmail: "user2@pal.com", terms: "", survey: "", matchEmail: ""},
+  {groupName: "santa", participantEmail: "user3@pal.com", terms: "x", survey: "x", matchEmail: "user1@pal.com"},
+  {groupName: "santa", participantEmail: "user4@pal.com", terms: "", survey: "", matchEmail: ""},
+  {groupName: "santa", participantEmail: "user5@pal.com", terms: "", survey: "", matchEmail: ""},
+  {groupName: "elves", participantEmail: "user1@elves.com", terms: "x", survey: "x", matchEmail: "user3@elves.com"},
+  {groupName: "elves", participantEmail: "user3@elves.com", terms: "x", survey: "x", matchEmail: "user1@elves.com"},
+] 

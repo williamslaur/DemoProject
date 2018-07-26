@@ -38,13 +38,12 @@ body{
   padding: 5px;
   font-size: 16px;
   color: orange;
-  margin: 5px;
 }
 
 .browse {
   text-align: center;
 }
-#browseButton, .saveData, #retrieveGroup {
+#browseButton, .saveData, #retrieveGrp {
 background-color: #fbff00;
 border-radius: 20px;
 margin: 10px;

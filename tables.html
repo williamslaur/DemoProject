@@ -5,11 +5,23 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>    
-    <script src="scripts/tables.js"></script>
+   
+<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> -->
+
+<!--<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+ <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script> -->
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<script src="scripts/tables.js"></script>
    
 <title>Tables for Input Data</title>
 
@@ -17,49 +29,48 @@
 
 <body>
 
-    <header class="header container-fluid">
-          <h1 class="indexTitle card-title">The Easy Secret Pal Platform</h1>
-               <div class="indexText card-text">
-                   <p>This platform provides an easy way to manage a Secret Pal group and provide participants with
-                       online access to their Secret Pal's preferences and special day information.  If you want to 
-                       create a new Secret Pal group, follow the instructions for Step 1 and then continue with the 
-                       remaining steps.  If you entered your admin email address and group on the front page, you should 
-                       see see you have access to all tables and see the status of the participants. </p>
-               </div>
-    </header>
-
-     <div class="contents container-fluid">
-
-     <nav class="nav nav-fill">
-        <a class="nav-item nav-link" href="./index.html">Sign In</a></li>
-        <a class="nav-item nav-link" href="./adminSheet.html">Admin Cheat Sheet</a></li>
-        <a class="nav-item nav-link active" href="./tables.html">Tables for Entry</a></li>
-<!--        <a class="nav-item nav-link" href="#">User Page</a></li>
-        <a class="nav-item nav-link" href="#">Matched user data</a></li> -->
-      </nav>
-
-
-    <header>
-        <h3>Tables for Administrators</h3>
-    </header>
-  <p>
-    <h4>Group Name Table</h4>
-  </p>
-  <p>
-    If you are starting a new group, enter information as described below.  If you are an admin of a group already, 
-    click the Retrieve Button to see all the data saved for that group. 
-  </p>
-  <div>
-    <form id="Group Name">
-      <input type="text" id="grpNameInput" name="grpNameInput" />
-   
-    <button type="submit" id="retrieveGroup" name="retrieveGroup">Retrieve Group Details</button>
-  </form>
-
+  <div class="header container-fluid">
+    <h1 class="indexTitle card-title">The Easy Secret Pal Platform</h1>
+        <div class="indexText card-text">
+              <p>This platform provides an easy way to manage a Secret Pal group and provide participants with
+                  online access to their Secret Pal's preferences and special day information.  If you want to 
+                  create a new Secret Pal group, follow the instructions for Step 1 and then continue with the 
+                  remaining steps.  If you entered your admin email address and group on the front page, you should 
+                  see access to all tables and the participant's status. </p>
+        </div>
   </div>
 
+  <div class="contents container-fluid">
+
+      <nav class="nav nav-pills">
+          <a class="nav-item nav-link" href="./index.html">Sign In</a></li>
+          <a class="nav-item nav-link" href="./adminSheet.html">Admin Cheat Sheet</a></li>
+          <a class="nav-item nav-link active" href="./tables.html">Tables View</a></li>
+  <!--        <a class="nav-item nav-link" href="#">User Page</a></li>
+          <a class="nav-item nav-link" href="#">Matched user data</a></li> -->
+    </nav>
+
+
+    <div class="inputContents">
+        <h3>Tables for Administrators</h3>
+            <h4>Group Name Table</h4>
+      <p></p>
       <p>
-        <h4>Administrator's Table</h4>
+        If you are starting a new group, enter information as described below.  If you are an admin of a group already, 
+        click the Retrieve Button to see all the data saved for that group. 
+      </p>
+      <div>
+        <form id="groupName">
+          <input type="text" id="grpNameInput" name="grpNameInput" />
+      
+          <button type="button" id="retrieveGrp" name="retrieveGroup">Retrieve Group Details</button>
+        </form>
+
+      </div>
+    </div>
+
+      <p>
+        <h4>Add Administrator's Table</h4>
     </p>
     <p>
       Enter your email address and the address of one to two assistants who will assist with management of the group.
@@ -77,14 +88,14 @@
                     </tr>
                     <tr>
                       <td><img src='./images/redPlus.png' id="plus1" /></td>
-                      <td colspan=1>&nbsp;</td>
+                      <td colspan=2>&nbsp;</td>
                     </tr>
                     </table>
                   </form>
     </div>
 
     <p>
-        <h4>Secret Pal User's Table</h4>
+        <h4>Add Secret Pal User's Table</h4>
     </p>
     <p>
       Enter the email addresses of every one who wishes to participate.  Once they get their invitation 
@@ -119,7 +130,7 @@
 <div class="container-fluid tableData">
 <div class="adminData">Here is the administrator's data saved previously for the group you entered.
     <div class="table-responsive">
-        <table class="table" id="adminTable">
+        <table class="table" id="adminGrp">
           <thead>
             <tr>
               <th>GroupName</th>
@@ -127,10 +138,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td></td>
-              <td></td>
-            </tr>
+            
           </tbody>
         </table>
       </div>
@@ -138,7 +146,7 @@
 
     <div class="partData">Here is the participant's data saved previously for the group you entered.
         <div class="table-responsive">
-            <table class="table" id="adminTable">
+            <table class="table" id="partGrp">
               <thead>
                 <tr>
                   <th>GroupName</th>
@@ -149,13 +157,7 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
+                
               </tbody>
             </table>
           </div>
