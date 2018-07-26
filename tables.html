@@ -9,15 +9,15 @@
 <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> -->
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> -->
 
 <!--<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script> -->
 
 <!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<!-- jQuery first, then Popper.js, then Bootstrap JS  -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
@@ -53,20 +53,53 @@
 
     <div class="inputContents">
         <h3>Tables for Administrators</h3>
-            <h4>Group Name Table</h4>
+            <h4>Current Information</h4>
       <p></p>
       <p>
-        If you are starting a new group, enter information as described below.  If you are an admin of a group already, 
-        click the Retrieve Button to see all the data saved for that group. 
+        Here is the information for your current group.  If you are starting a new group, 
+        enter information into the add Admin and add Secret Pal tables below.   
       </p>
-      <div>
-        <form id="groupName">
-          <input type="text" id="grpNameInput" name="grpNameInput" />
-      
-          <button type="button" id="retrieveGrp" name="retrieveGroup">Retrieve Group Details</button>
-        </form>
-
+      <div class="row confirmData">
+        <div class="col">
+            Group Name = <p id="groupName"></p>
+        </div>
+    
+        <div class="col">
+            Email Address = <p id="emailAddress"></p>
+        </div>
       </div>
+      <div class="retrieveButton">
+        <button id="getDataTables" type="button" class="retrieveBtn">Retrieve Tables</button>
+      </div>
+      <div class="container-fluid tableData">
+        <div class="adminData">Here is the administrator's data saved previously for the group you entered.
+            <div class="table-responsive">
+                <div id="adminGrpTable"> </div>
+                  
+              </div>
+            </div>
+        
+            <div class="partData">Here is the participant's data saved previously for the group you entered.
+                <div class="table-responsive">
+                    <table class="table" id="partGrp">
+                      <thead>
+                        <tr>
+                          <th>GroupName</th>
+                          <th>Participant Email</th>
+                          <th>Terms</th>
+                          <th>Survey</th>
+                          <th>Match Email</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+      
     </div>
 
       <p>

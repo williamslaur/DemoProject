@@ -1,39 +1,74 @@
 $(document).ready(function(){
 
+//bring in data from index.html
 
-  //event listener to pull array data
+var adminjsonstring = localStorage.getItem("adminFound");
 
-  document.getElementById("retrieveGrp").addEventListener("click", retrieveTables);
+var jsonObject = JSON.parse(adminjsonstring); 
 
-  
-  function retrieveTables(){
+console.log(jsonObject);
 
-    var group = document.forms["groupName"]["grpNameInput"].value;
+//pull in the groupname to tables to show group to be reviewed
+
+document.getElementById("groupName").innerHTML = jsonObject.groupName;
+document.getElementById("emailAddress").innerHTML = jsonObject.adminEmail;
+
+
+//retrieve only the data matching the groupname above
+
+
+$("#getDataTables").click(function(){
+
+    debugger;
+
+    var group = document.getElementById("groupName").innerHTML = jsonObject.groupName;
     var groupstr = group.toLowerCase();
 
     //retrieve administrators for the group
 
-    var adminGrp = adminTable.find(function(element){
+    var adminGrp = adminTable.filter(function(element){
       return (element.groupName === groupstr);
     })
       console.log(adminGrp);
 
-      //retrieve participants for the group
 
-    var partGrp = partTable.find(function(element){
+  //to populate the tables for the data
+
+  function newNode(node, text, styles) {
+    node.innerHTML = text;
+    node.className = styles;
+    return node;
+  }
+  
+  var fragment = document.createDocumentFragment(),
+      container = document.getElementById("adminGrpTable");
+  
+  for(var i = 1; i <= adminGrp.length; i++) {
+    var tr = document.createElement("tr");
+    var td = newNode(document.createElement("td"), i, "cell");
+    tr.appendChild(td);
+    fragment.appendChild(tr);
+  }
+  
+  container.appendChild(fragment);
+
+    //retrieve participants for the group
+
+    var partGrp = partTable.filter(function(element){
       return (element.groupName === groupstr);
     })
     console.log(partGrp);
-  };
-
-  //to populate the data in the tables for the data
   
-  var bodyString = '';
+  
+});
 
-        $.each(groupName, function(index, groupName) {
-            bodyString += ('<tr><td>'+groupName+'</td><td>'+adminEmail[index]+'</td></tr>');
-        });
-        $('.groupName tbody').html(bodyString);
+  
+ // var bodyString = '';
+
+   //     $.each(groupName, function(index, groupName) {
+     //       bodyString += ('<tr><td>'+groupName+'</td><td>'+adminEmail[index]+'</td></tr>');
+       // });
+     //   $('.groupName tbody').html(bodyString);
         
         
 
