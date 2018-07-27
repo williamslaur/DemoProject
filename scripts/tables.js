@@ -8,7 +8,7 @@ var jsonObject = JSON.parse(adminjsonstring);
 
 console.log(jsonObject);
 
-//pull in the groupname to tables to show group to be reviewed
+//pull in the groupname and username to tables to show group to be reviewed
 
 document.getElementById("groupName").innerHTML = jsonObject.groupName;
 document.getElementById("emailAddress").innerHTML = jsonObject.adminEmail;
@@ -19,8 +19,7 @@ document.getElementById("emailAddress").innerHTML = jsonObject.adminEmail;
 
 $("#getDataTables").click(function(){
 
-    debugger;
-
+    
     var group = document.getElementById("groupName").innerHTML = jsonObject.groupName;
     var groupstr = group.toLowerCase();
 
@@ -31,58 +30,124 @@ $("#getDataTables").click(function(){
     })
       console.log(adminGrp);
 
-
-  //to populate the tables for the data
-
-  function newNode(node, text, styles) {
-    node.innerHTML = text;
-    node.className = styles;
-    return node;
-  }
-  
-  var fragment = document.createDocumentFragment(),
-      container = document.getElementById("adminGrpTable");
-  
-  for(var i = 1; i <= adminGrp.length; i++) {
-    var tr = document.createElement("tr");
-    var td = newNode(document.createElement("td"), i, "cell");
-    tr.appendChild(td);
-    fragment.appendChild(tr);
-  }
-  
-  container.appendChild(fragment);
-
     //retrieve participants for the group
 
     var partGrp = partTable.filter(function(element){
       return (element.groupName === groupstr);
     })
     console.log(partGrp);
-  
-  
+
+
+  //to populate the tables for the data
+
+  $("#adminjsGrid").jsGrid({
+    width: "100%",
+    height: "175px",
+
+    inserting: false,
+    editing: false,
+    sorting: false,
+    paging: false,
+
+    data: adminGrp,
+
+    fields: [
+        { name: "groupName", type: "text", width: 50, validate: "required", title: "Group Name"},
+        { name: "adminEmail", type: "number", width: 150, title: "Administrator's Email" }
+        
+    ]
 });
 
-  
- // var bodyString = '';
+$("#partjsGrid").jsGrid({
+  width: "100%",
+  height: "400px",
 
-   //     $.each(groupName, function(index, groupName) {
-     //       bodyString += ('<tr><td>'+groupName+'</td><td>'+adminEmail[index]+'</td></tr>');
-       // });
-     //   $('.groupName tbody').html(bodyString);
-        
-        
+  inserting: false,
+  editing: false,
+  sorting: false,
+  paging: false,
+
+  data: partGrp,
+
+  fields: [
+      { name: "groupName", type: "text", width: 75, title: "Group Name", validate: "required" },
+      { name: "participantEmail", type: "number", width: 125, title: "Secret Pal Email" },
+      { name: "terms", type: "number", width: 25, title: "Accept Terms" },
+      { name: "survey", type: "number", width: 25, title: "Survey Complete" },
+      { name: "matchEmail", type: "number", width: 125, title: "Matched Pal Email" },
+  ]
+});
+    
+});
+// js grid function for the add admin table
+
+$("#addAdminTable").click(function(){
+ 
+  $("#addAdminTable").jsGrid({
+      height: "70%",
+      width: "100%",
+      filtering: true,
+      editing: true,
+      inserting: true,
+      sorting: true,
+      paging: true,
+      autoload: true,
+      pageSize: 15,
+      pageButtonCount: 5,
+      deleteConfirm: "Do you really want to delete the client?",
+      data: adminTable,
+      fields: [
+          { name: "groupName", type: "text", width: 50, validate: "required", title: "Group Name" },
+          { name: "adminEmail", type: "text", width: 150, validate: "required", title: "Admin Email" },
+          { type: "control" }
+      ]
+  });
+
+}); 
+     
+// js grid function to all the participants table 
+
+$("#addPalTable").click(function(){
+ 
+  $("#addPartTable").jsGrid({
+      height: "70%",
+      width: "100%",
+      filtering: true,
+      editing: true,
+      inserting: true,
+      sorting: true,
+      paging: true,
+      autoload: true,
+      pageSize: 15,
+      pageButtonCount: 5,
+      deleteConfirm: "Do you really want to delete the client?",
+      data: partTable,
+      fields: [
+          { name: "groupName", type: "text", width: 50, validate: "required", title: "Group Name" },
+          { name: "participantEmail", type: "text", width: 150, validate: "required", title: "Secret Pal Email" },
+          { name: "terms", type: "text", width: 25, title: "Accept Terms" },
+          { name: "survey", type: "text", width: 25, title: "Survey Complete" },
+          { name: "matchEmail", type: "text", width: 125, title: "Matched Pal Email" },
+          { type: "control" }
+      ]
+  });
+
+}); 
+
 
 
     // functions to add or subtract lines from admin input tables  
 
-    $(plus1).click(function addLine1() {
+/*    $(plus1).click(function addLine1() {
         var tabLines = document.getElementById("adminTabLines");
         var tabLinesRow = tabLines.insertRow(tabLines.rows.length-1);
         var col1html = "<img src='./images/redMinus.png' id='minus1' />";
-        var col2html = "<input type='email' name='adminEmailInput' />";
+        var col2html = "<input type='text' name='groupNameInput' />";
+        var col3html = "<input type='email' name='adminEmailInput' />";
               
         var col1 = tabLinesRow.insertCell(0); col1.innerHTML=col1html;
         var col2 = tabLinesRow.insertCell(1); col2.innerHTML=col2html;
+        var col3 = tabLinesRow.insertCell(2); col3.innerHTML=col3html;
       });
 
     $(minus1).click(function removeLine1(lineItem) {
@@ -96,16 +161,18 @@ $("#getDataTables").click(function(){
         var tabLines = document.getElementById("partTabLines");
         var tabLinesRow = tabLines.insertRow(tabLines.rows.length-1);
         var col1html = "<img src='./images/redMinus.png' id='minus2' />";
-        var col2html = "<input type='email' name='partEmailInput' />";
-        var col3html = "<input type='text' name='termsInput' />";
-        var col4html = "<input type='text' name='surveyInput' />";
-        var col5html = "<input type='email' name='matchedPal' />";
+        var col2html = "<input type='text' name='groupNameInput' />";
+        var col3html = "<input type='email' name='partEmailInput' />";
+        var col4html = "<input type='text' name='termsInput' />";
+        var col5html = "<input type='text' name='surveyInput' />";
+        var col6html = "<input type='email' name='matchedPal' />";
         
         var col1 = tabLinesRow.insertCell(0); col1.innerHTML=col1html;
         var col2 = tabLinesRow.insertCell(1); col2.innerHTML=col2html;
-        var col3 = tabLinesRow.insertCell(1); col3.innerHTML=col3html;
-        var col4 = tabLinesRow.insertCell(1); col4.innerHTML=col4html;
-        var col5 = tabLinesRow.insertCell(1); col5.innerHTML=col5html;
+        var col3 = tabLinesRow.insertCell(2); col3.innerHTML=col3html;
+        var col4 = tabLinesRow.insertCell(3); col4.innerHTML=col4html;
+        var col5 = tabLinesRow.insertCell(4); col5.innerHTML=col5html;
+        var col6 = tabLinesRow.insertCell(5); col6.innerHTML=col6html;
       });
      
       $(minus2).click(function removeLine2(lineItem) {
@@ -141,6 +208,7 @@ $("#getDataTables").click(function(){
       // (plus other fields in the JSON as required)
       // ready to post via ajax etc
 
+      */
 });
 
 

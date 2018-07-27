@@ -5,12 +5,20 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <link type="text/css" rel="stylesheet" href="styles/jsgrid.min.css" />
+    <link type="text/css" rel="stylesheet" href="styles/jsgrid-theme.min.css" />
+    
+    
+
    
 <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> -->
+<script
+  src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+  crossorigin="anonymous"></script>
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> -->
 
 <!--<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script> -->
@@ -20,6 +28,13 @@
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jsgrid/1.5.3/jsgrid.min.css" />
+<link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jsgrid/1.5.3/jsgrid-theme.min.css" />
+ 
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jsgrid/1.5.3/jsgrid.min.js"></script>
+
+<script type="text/javascript" src="scripts/jsgrid.min.js"></script>
 
 <script src="scripts/tables.js"></script>
    
@@ -42,189 +57,133 @@
 
   <div class="contents container-fluid">
 
-      <nav class="nav nav-pills">
+      <div class="nav nav-pills">
           <a class="nav-item nav-link" href="./index.html">Sign In</a></li>
           <a class="nav-item nav-link" href="./adminSheet.html">Admin Cheat Sheet</a></li>
           <a class="nav-item nav-link active" href="./tables.html">Tables View</a></li>
-  <!--        <a class="nav-item nav-link" href="#">User Page</a></li>
-          <a class="nav-item nav-link" href="#">Matched user data</a></li> -->
-    </nav>
+      </div>
 
 
     <div class="inputContents">
         <h3>Tables for Administrators</h3>
-            <h4>Current Information</h4>
-      <p></p>
-      <p>
-        Here is the information for your current group.  If you are starting a new group, 
-        enter information into the add Admin and add Secret Pal tables below.   
-      </p>
-      <div class="row confirmData">
-        <div class="col">
-            Group Name = <p id="groupName"></p>
-        </div>
-    
-        <div class="col">
-            Email Address = <p id="emailAddress"></p>
-        </div>
-      </div>
-      <div class="retrieveButton">
-        <button id="getDataTables" type="button" class="retrieveBtn">Retrieve Tables</button>
-      </div>
-      <div class="container-fluid tableData">
-        <div class="adminData">Here is the administrator's data saved previously for the group you entered.
-            <div class="table-responsive">
-                <div id="adminGrpTable"> </div>
-                  
+
+        <div class="tabSection">
+            <nav>
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <a class="nav-item nav-link active" id="nav-current-tab" data-toggle="tab" href="#nav-current" role="tab" aria-controls="nav-current" aria-selected="true">Current Information</a>
+                    <a class="nav-item nav-link" id="nav-add-tab" data-toggle="tab" href="#nav-add" role="tab" aria-controls="nav-add" aria-selected="false">Add Data Into Tables</a>
+                </div>
+            </nav>
+
+        <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="nav-current" role="tabpanel" aria-labelledby="nav-current-tab">
+              <h4>Current Information</h4>
+              <p>
+                Here is the information for your current group.  If you are starting a new group, 
+                enter information into the Add Admininistrator's Table and Add Secret Pal Tables below.   
+              </p>
+              <div class="row confirmData">
+                <div class="col">
+                  Group Name = <p id="groupName"></p>
+                </div>
+                <div class="col">
+                  Email Address = <p id="emailAddress"></p>
+                </div>
               </div>
-            </div>
-        
-            <div class="partData">Here is the participant's data saved previously for the group you entered.
-                <div class="table-responsive">
-                    <table class="table" id="partGrp">
-                      <thead>
-                        <tr>
-                          <th>GroupName</th>
-                          <th>Participant Email</th>
-                          <th>Terms</th>
-                          <th>Survey</th>
-                          <th>Match Email</th>
-                        </tr>
-                      </thead>
-                      <tbody>
+              <div class="retrieveButton">
+                <button id="getDataTables" type="button" class="retrieveBtn">Retrieve Tables</button>
+              </div>
+              <div class="container-fluid tableData">
+                <div class="adminData">Here is the administrator's data saved previously for the group you entered.
+                    <div class="table-responsive">
+                      <div id="adminjsGrid"></div>
+                    </div>
+                </div>
+                
+                <div class="partData">Here is the participant's data saved previously for the group you entered.
+                    <div class="table-responsive">
+                      <div id="partjsGrid"></div>
                         
-                      </tbody>
-                    </table>
-                  </div>
+                    </div>
                 </div>
               </div>
             </div>
-      
-    </div>
-
-      <p>
-        <h4>Add Administrator's Table</h4>
-    </p>
-    <p>
-      Enter your email address and the address of one to two assistants who will assist with management of the group.
-    </p>
-
-    <div>
-            <form id=frm1Lines>
-                    <table id=adminTabLines>
-                    <tr>
-                      <th></th>
-                      <th>Admin Email Address</th>
-                      <tr>
-                      <td><img src='./images/redMinus.png' id="minus1" /></td>
-                      <td><input type='text' name='adminEmailInput' /></td>
-                    </tr>
-                    <tr>
-                      <td><img src='./images/redPlus.png' id="plus1" /></td>
-                      <td colspan=2>&nbsp;</td>
-                    </tr>
-                    </table>
-                  </form>
-    </div>
-
-    <p>
-        <h4>Add Secret Pal User's Table</h4>
-    </p>
-    <p>
-      Enter the email addresses of every one who wishes to participate.  Once they get their invitation 
-      and agree to terms and complete the survey, then you will be able to perform the matching process. 
-    </p>
-    <div>
-            <form id=frm2Lines>
-                    <table id=partTabLines>
-                    <tr>
-                      <th></th>
-                      <th>Participant's Email Address</th>
-                      <th>Terms Agreement</th>
-                      <th>Survey Complete</th>
-                      <th>Matched Secret Pal</th>
-                      <tr>
-                      <td><img src='./images/redMinus.png' id="minus2" /></td>
-                      <td><input type='email' name='partEmailInput' /></td>
-                      <td><input type='text' name='termsInput' /></td>
-                      <td><input type='text' name='surveyInput' /></td>
-                      <td><input type='email' name='matchedPal' /></td>
-                    </tr>
-                    <tr>
-                      <td><img src='./images/redPlus.png' id="plus2" /></td>
-                      <td colspan=5>&nbsp;</td>
-                    </tr>
-                    </table>
-                  </form>
-
-          <button type="submit" class="saveData" id="saveData">Save Data</button>
-    </div>
-
-<div class="container-fluid tableData">
-<div class="adminData">Here is the administrator's data saved previously for the group you entered.
-    <div class="table-responsive">
-        <table class="table" id="adminGrp">
-          <thead>
-            <tr>
-              <th>GroupName</th>
-              <th>Admin Email Address</th>
-            </tr>
-          </thead>
-          <tbody>
-            
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-    <div class="partData">Here is the participant's data saved previously for the group you entered.
-        <div class="table-responsive">
-            <table class="table" id="partGrp">
-              <thead>
-                <tr>
-                  <th>GroupName</th>
-                  <th>Participant Email</th>
-                  <th>Terms</th>
-                  <th>Survey</th>
-                  <th>Match Email</th>
-                </tr>
-              </thead>
-              <tbody>
-                
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-
-<!--
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script>
-       $(document).ready(function(){
-        var country = ["Norway", "Sweden", "Denmark"];
-        var capital = ["Oslo", "Stockholm" , "Copenhagen"];
-    
-        var bodyString = '';
-        $.each(country, function(index, country) {
-            bodyString += ('<tr><td>'+country+'</td><td>'+capital[index]+'</td></tr>');
-        });
-        $('.country tbody').html(bodyString);
         
-        });
-    </script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    </head>
-    <body>
-      <table class="table table-striped country">
-          <thead>
-              <tr><th>Country</th><th>Capital</th>
-          </thead>
-          <tbody></tbody>
-      </table>  -->
+  
+            <div class="tab-pane fade" id="nav-add" role="tabpanel" aria-labelledby="nav-add-tab">
+              <p>
+                <h4>Add Administrator's Table</h4> </p>
+              
+              <p>Click the Add the Input Table for Administrators. Enter your email address and the 
+                address of one to two assistants who will assist with management of the group. </p>
+                <div class="addTblBtn" id="addTblBtn">
+                <button type="button" id="addAdminTable" class="addTbl">Add the Administrator's Table</button>
+              </div>
+              
 
+              <div id="addAdminTable">
 
-  </div>
+<!--                  <form id=frm1Lines>
+                          <table id=adminTabLines>
+                          <tr>
+                            <th></th>
+                            <th>Group Name</th>
+                            <th>Admin Email Address</th>
+                            <tr>
+                            <td><img src='./images/redMinus.png' id="minus1" /></td>
+                            <td><input type="text" name="groupName" /></td>
+                            <td><input type='email' name='adminEmailInput' /></td>
+                          </tr>
+                          <tr>
+                            <td><img src='./images/redPlus.png' id="plus1" /></td>
+                            <td colspan=3>&nbsp;</td>
+                          </tr>
+                          </table>
+                  </form>   -->
+              </div>
+
+              <p>
+                  <h4>Add Secret Pal User's Table</h4> </p>
+              <p>
+                Click the button to add the table to enter Secret Pal data.  Enter the email addresses of every 
+                one who wishes to participate.  Once they get their invitation, 
+                and agree to terms and complete the survey, then you will be able to perform the matching process. 
+              </p>
+              <div class="addTblBtn" id="addPalBtn">
+                  <button type="button" id="addPalTable" class="addTbl">Add the Secret Pal Table</button>
+                </div>
+              
+              <div id="addPartTable">
+
+<!--                 <form id=frm2Lines>
+                        <table id=partTabLines>
+                        <tr>
+                          <th></th>
+                          <th>Group Name</th>
+                          <th>Participant's Email Address</th>
+                          <th>Terms Agreement</th>
+                          <th>Survey Complete</th>
+                          <th>Matched Secret Pal</th>
+                          <tr>
+                          <td><img src='./images/redMinus.png' id="minus2" /></td>
+                          <td><input type='text' name='groupName' /></td>
+                          <td><input type='email' name='partEmailInput' /></td>
+                          <td><input type='text' name='termsInput' /></td>
+                          <td><input type='text' name='surveyInput' /></td>
+                          <td><input type='email' name='matchedPal' /></td>
+                        </tr>
+                        <tr>
+                          <td><img src='./images/redPlus.png' id="plus2" /></td>
+                          <td colspan=6>&nbsp;</td>
+                        </tr>
+                        </table>
+                </form>  -->
+
+                  <button type="submit" class="saveData" id="saveData">Save Data</button>
+              </div>
+            </div>
+          </div>
+    </div>
 
     <div class="footer">
         

@@ -40,14 +40,14 @@ body{
   color: orange;
 }
 
-.browse {
+.browse, .retrieveButton {
   text-align: center;
 }
-#browseButton, .saveData, #retrieveGrp {
+#browseButton, .saveData, #retrieveGrp, .retrieveBtn {
 background-color: #fbff00;
 border-radius: 20px;
 margin: 10px;
-max-width: 75%;
+width: 75%;
 font-size: large;
 }
 
@@ -55,7 +55,7 @@ font-size: large;
   background-color: aqua;
   max-width: 100%;
 }
-div .participant, div .admin {
+div .participant, div .admin, .confirmData .col{
   border: 2px solid #31B404;
   border-radius: 20px;
   padding: 10px;
