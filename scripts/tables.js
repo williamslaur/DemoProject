@@ -79,71 +79,117 @@ $("#partjsGrid").jsGrid({
 });
     
 });
-// js grid function for the add admin table
 
-$("#addAdminTable").click(function(){
- 
-  $("#addAdminTable").jsGrid({
-      height: "70%",
-      width: "100%",
-      filtering: true,
-      editing: true,
-      inserting: true,
-      sorting: true,
-      paging: true,
-      autoload: true,
-      pageSize: 15,
-      pageButtonCount: 5,
-      deleteConfirm: "Do you really want to delete the client?",
-      data: adminTable,
-      fields: [
-          { name: "groupName", type: "text", width: 50, validate: "required", title: "Group Name" },
-          { name: "adminEmail", type: "text", width: 150, validate: "required", title: "Admin Email" },
-          { type: "control" }
-      ]
+
+
+ //Method to add nw admins 
+ $("#plus1").click(function() {
+  var groupNameInput = $("#groupNameInput").val();
+  var adminEmailInput = $("#adminEmailInput").val();  
+  
+  //we add the group name and email input to array in case you need it in the future
+  adminTable.push({groupName : groupNameInput, adminEmail : adminEmailInput});
+
+  $(".groupName").append("<tr>" + 
+        "<td>"+ groupNameInput + "</td>" + 
+        "<td>"+ adminEmailInput  +"</td>" + 
+        "<td><img src='./images/redMinus.png' class='minus1' /></td>"  + 
+        "</tr>")
+    });
+
+  /*Method to remove admin from the table and the array
+  we do this way, because the minus button doesn't exist yet in the view, and when an element 
+  doesn't exist, you can access it directly, you have to get the parent element and the search for 
+  the actual element you want to click   we are telling to get the adminTabLines table, 
+  and on the "click" event, it will search for the actual minus2 class, so for each minus button,
+  it will have an independent click event
+  this way, we can control which row to delete and remove the element from the array  */
+
+  $("#adminTabLines").on("click", ".minus1", function() {
+    var row = $(this).parent().parent();  //we get the row <tr> from the table
+    var emailSelected = $(row).children().next()[0];   //ugly way to get the <td> where is the email from the admin email
+    index = adminTable.findIndex(x => x.adminEmail == $(emailSelected).text());   //we get the index of the array, where is the email you want to delete
+    adminTable.splice(index, 1);   //we remove the element from the array
+    $(row).remove();   //we delete the row from the table in the view
   });
 
-}); 
+
+// functions to add or subtract lines from participants input tables
+
+$("#plus2").click(function() {
+  var groupName = $("#groupNameInput").val();
+  var participantEmail = $("#partEmailInput").val();
+  var termsAgreement = $("#termsInput").val();
+  var surveyComplete = $("#surveyInput").val();
+  var matchEmail = $("#matchEmailInput").val();
+  
+  //we push the object to the array, 
+  partTable.push({groupName: groupName, participantEmail: participantEmail, terms: termsAgreement, survey: surveyComplete, matchEmail: matchEmail})
+  
+  console.log(partTable)
+
+  $(".secretPalBody").append("<tr>" + 
+  "<td>" + groupName + "</td>" +
+  "<td>" + participantEmail + "</td>" +
+  "<td>" + termsAgreement + "</td>" +
+  "<td>" + surveyComplete + "</td>" +
+  "<td>" + matchEmail + "</td>" +
+  "<td><img src='./images/redMinus.png' class='minus2' /></td>" +
+"</tr>");
+});
+
+//we do this way, because the minus button doesn't exist yet in the view, and when an element doesn't exist, you can access it directly, you have to get the parent element and the search for the actual element you want to click
+  //we are telling to get the partTabLines table, and on the "click" event, it will search for the actual minus2 class, so for each minus button, it will have an independent click event
+  //this way, we can control which row to delete and remove the element from the array
+  $("#partTabLines").on("click", ".minus2", function() {        
+    var currentRow = $(this).parent().parent();
+    var groupName = $(currentRow).children().first()[0];
+    index = partTable.findIndex(x => x.groupName == $(groupName).text());
+    partTable.splice(index, 1);   //we remove the element from the array
+    $(currentRow).remove();   //we delete the row from the table in the view
+
+  });
+
+  
+
+  /*  // functions to add or subtract lines from admin input tables  
+
+    function deleteAdmRow(row){
+    var i=row.parentNode.parentNode.rowIndex;
+    $("#adminTabLines").deleteRow(i);
+    };
+
+    $("#addAdmButton").click(function(){
+    
+    var x=$("#adminTabLines");         // deep clone the targeted row
+    var new_row = x.rows[0].cloneNode(true);          // get the total number of rows
+    var len = x.rows.length;                   // set the innerHTML of the first row 
+    new_row.cells[0].innerHTML = len;
+
+       // grab the input from the first cell and update its ID and value       
+    var inp1 = new_row.cells[1].getElementsByTagName('input')[0];
+    inp1.id += len;
+    inp1.value = '';
+
+       // grab the input from the first cell and update its ID and value
+    var inp2 = new_row.cells[2].getElementsByTagName('input')[0];
+    inp2.id += len;
+    inp2.value = '';
+
+       // append the new row to the table
+    x.appendChild( new_row );
+});
+
+
+    $(plus1).click(function (){
+
      
-// js grid function to all the participants table 
-
-$("#addPalTable").click(function(){
- 
-  $("#addPartTable").jsGrid({
-      height: "70%",
-      width: "100%",
-      filtering: true,
-      editing: true,
-      inserting: true,
-      sorting: true,
-      paging: true,
-      autoload: true,
-      pageSize: 15,
-      pageButtonCount: 5,
-      deleteConfirm: "Do you really want to delete the client?",
-      data: partTable,
-      fields: [
-          { name: "groupName", type: "text", width: 50, validate: "required", title: "Group Name" },
-          { name: "participantEmail", type: "text", width: 150, validate: "required", title: "Secret Pal Email" },
-          { name: "terms", type: "text", width: 25, title: "Accept Terms" },
-          { name: "survey", type: "text", width: 25, title: "Survey Complete" },
-          { name: "matchEmail", type: "text", width: 125, title: "Matched Pal Email" },
-          { type: "control" }
-      ]
-  });
-
-}); 
-
-
-
-    // functions to add or subtract lines from admin input tables  
-
-/*    $(plus1).click(function addLine1() {
-        var tabLines = document.getElementById("adminTabLines");
+      
+        var tabLines = $("#adminTabLines");
         var tabLinesRow = tabLines.insertRow(tabLines.rows.length-1);
         var col1html = "<img src='./images/redMinus.png' id='minus1' />";
-        var col2html = "<input type='text' name='groupNameInput' />";
-        var col3html = "<input type='email' name='adminEmailInput' />";
+        var col2html = "<input type='text' name='groupName' />";
+        var col3html = "<input type='email' name='adminEmail' />";
               
         var col1 = tabLinesRow.insertCell(0); col1.innerHTML=col1html;
         var col2 = tabLinesRow.insertCell(1); col2.innerHTML=col2html;
@@ -161,11 +207,11 @@ $("#addPalTable").click(function(){
         var tabLines = document.getElementById("partTabLines");
         var tabLinesRow = tabLines.insertRow(tabLines.rows.length-1);
         var col1html = "<img src='./images/redMinus.png' id='minus2' />";
-        var col2html = "<input type='text' name='groupNameInput' />";
-        var col3html = "<input type='email' name='partEmailInput' />";
-        var col4html = "<input type='text' name='termsInput' />";
-        var col5html = "<input type='text' name='surveyInput' />";
-        var col6html = "<input type='email' name='matchedPal' />";
+        var col2html = "<input type='text' name='groupName' />";
+        var col3html = "<input type='email' name='partEmail' />";
+        var col4html = "<input type='text' name='terms' />";
+        var col5html = "<input type='text' name='survey' />";
+        var col6html = "<input type='email' name='matchEmail' />";
         
         var col1 = tabLinesRow.insertCell(0); col1.innerHTML=col1html;
         var col2 = tabLinesRow.insertCell(1); col2.innerHTML=col2html;
@@ -195,14 +241,15 @@ $("#addPalTable").click(function(){
         arrLines[i]['field1'] = $("#frmLines input[name=field1]").eq(i).val();
         arrLines[i]['field2'] = $("#frmLines input[name=field2]").eq(i).val();
         arrLines[i]['field3'] = $("#frmLines input[name=field3]").eq(i).val();
-        arrLines[i]['field4'] = $("#frmLines input[name=field3]").eq(i).val();
-        arrLines[i]['field5'] = $("#frmLines input[name=field3]").eq(i).val();
+        arrLines[i]['field4'] = $("#frmLines input[name=field4]").eq(i).val();
+        arrLines[i]['field5'] = $("#frmLines input[name=field5]").eq(i).val();
+        arrLines[i]['field6'] = $("#frmLines input[name=field6]").eq(i).val();
       }
       frmData['lines'] = arrLines;
       
       //frmData['another_field'] = $('#frmLines input[name=another_field]").val();
       
-      //var jsonData = JSON.stringify(frmData);
+      var jsonData = JSON.stringify(frmData);
       
       // lines of data now in a JSON structure as indexed array
       // (plus other fields in the JSON as required)

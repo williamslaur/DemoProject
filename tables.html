@@ -116,30 +116,32 @@
               
               <p>Click the Add the Input Table for Administrators. Enter your email address and the 
                 address of one to two assistants who will assist with management of the group. </p>
-                <div class="addTblBtn" id="addTblBtn">
+<!--                <div class="addTblBtn" id="addTblBtn">
                 <button type="button" id="addAdminTable" class="addTbl">Add the Administrator's Table</button>
-              </div>
+              </div>  -->
               
 
               <div id="addAdminTable">
 
-<!--                  <form id=frm1Lines>
-                          <table id=adminTabLines>
+                  <form id="frm1Lines">
+                        <table id="adminTabLines">
                           <tr>
-                            <th></th>
                             <th>Group Name</th>
                             <th>Admin Email Address</th>
-                            <tr>
-                            <td><img src='./images/redMinus.png' id="minus1" /></td>
-                            <td><input type="text" name="groupName" /></td>
-                            <td><input type='email' name='adminEmailInput' /></td>
+                            <th></th>
+                          <tr/>
+                          <tr>
+                            <td><input type="text" name="groupNameInput" id="groupNameInput" /></td>
+                            <td><input type='email' name='adminEmailInput' id='adminEmailInput' /></td>
+                            <td><img src='./images/redPlus.png' id="plus1" /></td>
                           </tr>
                           <tr>
-                            <td><img src='./images/redPlus.png' id="plus1" /></td>
-                            <td colspan=3>&nbsp;</td>
+                          <tbody class="groupName">
+                              <!-- dynamic -->
+                            </tbody>
                           </tr>
-                          </table>
-                  </form>   -->
+                        </table>
+                  </form>   
               </div>
 
               <p>
@@ -149,37 +151,40 @@
                 one who wishes to participate.  Once they get their invitation, 
                 and agree to terms and complete the survey, then you will be able to perform the matching process. 
               </p>
-              <div class="addTblBtn" id="addPalBtn">
-                  <button type="button" id="addPalTable" class="addTbl">Add the Secret Pal Table</button>
-                </div>
-              
-              <div id="addPartTable">
 
-<!--                 <form id=frm2Lines>
-                        <table id=partTabLines>
+<!--              <div class="addTblBtn" id="addPalBtn">
+                  <button type="button" id="addPalTable" class="addTbl">Add the Secret Pal Table</button>
+                </div>  -->
+              
+              <div id="addPartTable"> 
+
+                 <form id="frm2Lines">
+                        <table id="partTabLines">
                         <tr>
-                          <th></th>
                           <th>Group Name</th>
                           <th>Participant's Email Address</th>
                           <th>Terms Agreement</th>
                           <th>Survey Complete</th>
                           <th>Matched Secret Pal</th>
+                          <th></th>
                           <tr>
-                          <td><img src='./images/redMinus.png' id="minus2" /></td>
-                          <td><input type='text' name='groupName' /></td>
-                          <td><input type='email' name='partEmailInput' /></td>
-                          <td><input type='text' name='termsInput' /></td>
-                          <td><input type='text' name='surveyInput' /></td>
-                          <td><input type='email' name='matchedPal' /></td>
+                     <!-- <td><img src='./images/redMinus.png' id="minus2" /></td> -->                          
+                          <td><input type='text' name='groupNameInput' id='groupNameInput' /></td>
+                          <td><input type='email' name='partEmailInput' id='partEmailInput' /></td>
+                          <td><input type='text' name='termsInput' id='termsInput' /></td>
+                          <td><input type='text' name='surveyInput' id='surveyInput' /></td>
+                          <td><input type='email' name='matchEmailInput' id='matchEmailInput' /></td>
+                          <td><img src='./images/redPlus.png' id="plus2" /></td>
                         </tr>
                         <tr>
-                          <td><img src='./images/redPlus.png' id="plus2" /></td>
-                          <td colspan=6>&nbsp;</td>
+                            <tbody class="secretPalBody">
+                                <!-- dynamic -->
+                              </tbody>
                         </tr>
                         </table>
-                </form>  -->
+                </form>  
 
-                  <button type="submit" class="saveData" id="saveData">Save Data</button>
+ <!--                  <button type="submit" class="saveData" id="saveData">Save Data</button>   -->
               </div>
             </div>
           </div>

@@ -1,27 +1,40 @@
 $(document).ready(function(){
 
+/*
 //retrieve data from json local storage
 
 var participantjsonstring = localStorage.getItem("participantFound");
 
 var jsonObject = JSON.parse(participantjsonstring); 
 
-console.log(jsonObject);
+console.log(jsonObject);  
 
 //input it into the section of the screen to verify
 
 document.getElementById("groupName").innerHTML = jsonObject.groupName;
 document.getElementById("emailAddress").innerHTML = jsonObject.participantEmail;
-document.getElementById("matchEmail").innerHTML = jsonObject.matchEmail;
+document.getElementById("matchEmail").innerHTML = jsonObject.matchEmail;   */
 
 //task to save agreement to rules into array
+var groupName = $("#grpName").val()
+var myname2 = $("#partEmail").val()
 var agree = $("#agreement").val();
-var myobject = jsonObject
-myobject.terms = agree
+var surveyDone = $("#completeProfile").val()
 
-partTable.push({myobject:terms=agree})
+var myobject = partTable.find(function (element){
+  return (element.participantEmail === myname2 && element.groupName === groupName);
+})
 
+$("#agreement").on("click", function (){
+Object.assign(partTable.find(o => o.participantEmail === myname2) || {}, {terms: agree});
+});
 
+$("#completeProfile").on("click", function(){
+Object.assign(partTable).find(o => o.participantEmail === myname2) || {}, {survey: surveyDone};
+
+//need to save all the data to the Projile when save and save and complete is done
+
+});
 
 //event listener to find the matched secret Pal object in the profile array
 
@@ -118,3 +131,15 @@ var profiles = [
   {groupName: "elves", participantEmail: "user1@elves.com", bdayDate: "03/31/1970", annDate: "07/01/2005", wkAnnDate: "04/15/2008", familyTime: "", pets: "2 catss", stores: "", collect: "memories", personMeet: "great grandmother", sweets: "chocolate", food: "cherries", drink: "margaritas", hobby: "photography", color: "blue", bookAuthor: "a a milne", poemPoet: "kalil gabral", vacation: "all over", favoriteHoliday: "birthday", showMovie: "big bang theory", musicArtist: "janis ian", teamAthlete: "colts", season: "spring", restaurants: "mexican", noItem: "", noFoodDrink: "licorice", noMedia: "", noTrinkets: ""},
 
 ]
+
+
+
+var partTable = [
+  {groupName: "santa", participantEmail: "user1@pal.com", terms: "x", survey: "x", matchEmail: "user3@pal.com"},
+  {groupName: "santa", participantEmail: "user2@pal.com", terms: "x", survey: "x", matchEmail: "user5@pal.com"},
+  {groupName: "santa", participantEmail: "user3@pal.com", terms: "x", survey: "x", matchEmail: "user1@pal.com"},
+  {groupName: "santa", participantEmail: "user4@pal.com", terms: "x", survey: "x", matchEmail: "user2@pal.com"},
+  {groupName: "santa", participantEmail: "user5@pal.com", terms: "x", survey: "x", matchEmail: "user4@pal.com"},
+  {groupName: "elves", participantEmail: "user1@elves.com", terms: "x", survey: "x", matchEmail: "user3@elves.com"},
+  {groupName: "elves", participantEmail: "user3@elves.com", terms: "x", survey: "x", matchEmail: "user1@elves.com"},
+] 
