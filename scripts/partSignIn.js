@@ -118,3 +118,14 @@ var profiles = [
   {groupName: "elves", participantEmail: "user1@elves.com", bdayDate: "03/31/1970", annDate: "07/01/2005", wkAnnDate: "04/15/2008", familyTime: "", pets: "2 catss", stores: "", collect: "memories", personMeet: "great grandmother", sweets: "chocolate", food: "cherries", drink: "margaritas", hobby: "photography", color: "blue", bookAuthor: "a a milne", poemPoet: "kalil gabral", vacation: "all over", favoriteHoliday: "birthday", showMovie: "big bang theory", musicArtist: "janis ian", teamAthlete: "colts", season: "spring", restaurants: "mexican", noItem: "", noFoodDrink: "licorice", noMedia: "", noTrinkets: ""},
 
 ]
+
+
+var partTable = [
+  {groupName: "santa", participantEmail: "user1@pal.com", terms: "x", survey: "x", matchEmail: "user3@pal.com"},
+  {groupName: "santa", participantEmail: "user2@pal.com", terms: "x", survey: "x", matchEmail: "user5@pal.com"},
+  {groupName: "santa", participantEmail: "user3@pal.com", terms: "x", survey: "x", matchEmail: "user1@pal.com"},
+  {groupName: "santa", participantEmail: "user4@pal.com", terms: "x", survey: "x", matchEmail: "user2@pal.com"},
+  {groupName: "santa", participantEmail: "user5@pal.com", terms: "x", survey: "x", matchEmail: "user4@pal.com"},
+  {groupName: "elves", participantEmail: "user1@elves.com", terms: "x", survey: "x", matchEmail: "user3@elves.com"},
+  {groupName: "elves", participantEmail: "user3@elves.com", terms: "x", survey: "x", matchEmail: "user1@elves.com"},
+] 

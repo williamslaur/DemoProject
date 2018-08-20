@@ -18,7 +18,7 @@ var partTable = [
   {groupName: "elves", participantEmail: "user3@elves.com", terms: "x", survey: "x", matchEmail: "user1@elves.com"},
 ] 
 
-//get participants information
+//get information from the input fields
 
 document.getElementById("partSubmit").addEventListener("click", comparePartForm);
 document.getElementById("adminSubmit").addEventListener("click", compareAdminForm);
@@ -42,13 +42,13 @@ function comparePartForm() {
 
 console.log(found);
 
-  if (found.length !== 0){
-    console.log(found);
+
+ //need an error message if checking name or group fails. Otherwise go to participant page
+
+  if (found === undefined){
+     alert("User not found.  Check your Group Name and email again, or contact your administrator for help.")
   } else {
-    alert("User not found.  Check your Group Name and email again, or contact your administrator for help.")
-  }
-  
-      
+
   var myJSON = JSON.stringify(found);  //convert to object to JSON string
 
   localStorage.setItem("participantFound", myJSON);   //we save the object as string
@@ -56,19 +56,18 @@ console.log(found);
   console.log(myJSON);
  
   window.location.assign("participant.html");   //send the user to the participants page
-      
-  };
+};
+
+};
 
 
-  //need to get an error along the way to pop up to check group name if it fails. 
+ 
 
 
 //get value of administrator's input fields and identify the object to look through
 
 function compareAdminForm() {
-
  
-
   var x = document.forms["adminInputFields"]["adminGrpName"].value;
   var y = document.forms["adminInputFields"]["adminEmail"].value;
 
@@ -84,19 +83,16 @@ var found = adminTable.find(function(element){
 
 // display an error message if the user is not in the table
 
-if (found.length !== 0){
-  console.log(found);
-} else {
+if (found === undefined){
   alert("User not found. Please check your Group Name and Email again or click the Browse Admin button and begin a new group.");
-}
-
-//convert object to JSON string 
-
-var myJSON = JSON.stringify(found);
+} else {
+  
+var myJSON = JSON.stringify(found);  //convert object to JSON string 
 
 localStorage.setItem("adminFound", myJSON);   //we save the object as string
 
 window.location.assign("adminSheet.html");   //send the user to the administrators page
+};
 
 };
 

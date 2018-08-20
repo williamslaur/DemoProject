@@ -95,3 +95,11 @@ div .welcome {
   text-shadow: 3px 3px rgb(155, 160, 109);
   text-decoration: none;
 }
+
+
+#myGroup {
+  color: #fbff00;
+  font-weight: bold;
+  text-align: center;
+  font-size: large;
+}
